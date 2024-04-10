@@ -1,0 +1,23 @@
+header{
+    position: relative;
+    z-index: 1000;
+    background: radial-gradient(circle at 300px, #352c67, black);
+    height: 75px;
+    display: flex;
+    align-items: center;
+}
+.logo{
+    margin-left: 300px;
+}
+.logo a{
+    display: block;
+    height: 75px;
+}
+.logo a img{
+    width: 75px;
+    user-select: none;
+    transition-duration: 300ms;
+}
+.logo a img:hover{
+    box-shadow: 1px 1px 50px rgba(252, 252, 252, 0.29);
+}
