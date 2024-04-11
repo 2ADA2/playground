@@ -1,59 +1,68 @@
-.home{
-    padding: 0 10vw;
-    background: black;
+/* Шапка */
+.home {
     height: 100%;
     max-width: 3000px;
-    width: 100%;
+    width: 100vw;
 }
-.home-header{
-    height: 1200px;
-    margin-top:200px;
+
+.home-header-container {
+    background: radial-gradient(circle at 70% 100px, #12062c, black);
+    transition-duration: 100ms;
+    height: 1500px;
+}
+
+.home-header {
+    margin-top: 200px;
     display: flex;
     justify-content: flex-end;
-
 }
-.home-header svg{
+
+.home-header svg {
     position: relative;
-    top:-350px;
-    left:0;
-    margin:0;
+    top: -350px;
+    left: 0;
+    margin: 0;
     font-size: clamp(700px, 50vw, 1000px);
     opacity: 0.7;
     animation: rotating 60s infinite linear;
     transition-duration: 300ms;
 }
+.home-header .p-opacity{
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.68);
+}
 
 @keyframes rotating {
-    0%{
+    0% {
         transform: rotate(0deg);
     }
-    100%{
+    100% {
         transform: rotate(360deg);
     }
 }
 
-.home-panel-container{
+.home-panel-container {
     width: 100%;
-    max-width: 3000px;
     display: flex;
     justify-content: center;
     height: 150px;
 
 }
 
-.home-panel{
+.home-panel {
     z-index: 1;
     position: absolute;
     top: 125px;
     border: 1px solid rgba(255, 255, 255, 0.65);
     border-radius: 40px;
-    width:500px;
+    width: 500px;
     height: 55px;
     display: flex;
     justify-content: space-around;
 
 }
-.home-panel button{
+
+.home-panel button {
     position: relative;
     z-index: 2;
     font-weight: 100;
@@ -67,11 +76,13 @@
     border-radius: 40px;
     transition-duration: 300ms;
 }
-.home-panel button:hover{
+
+.home-panel button:hover {
     background-color: rgba(143, 143, 143, 0.22);
-    color:white;
+    color: white;
 }
-.home-panel:before{
+
+.home-panel:before {
     content: "";
     z-index: 0;
     display: block;
@@ -84,100 +95,277 @@
     cursor: pointer;
     transition-duration: 500ms;
 }
-.project-info:before{
+
+.project-info:before {
     transform: translateY(-1px) translateX(124px);
 }
-.home-main{
+
+.home-main {
     position: relative;
-    left:0;
+    left: 0;
     display: flex;
     flex-direction: column;
-    gap:40px;
+    gap: 40px;
     width: 50%;
     transition-duration: 500ms;
 }
 
-.home-main h2{
+.home-main h2 {
     font-size: 40px;
 }
 
-.home-main div h2, .home-about h2{
+.home-main div h2, .home-about h2 {
     font-family: sans-serif;
     font-size: 100px;
     position: relative;
 }
 
-.home-about{
+.home-about {
     font-size: 30px;
     position: absolute;
-    left:-50vw;
+    left: calc(-50vw - 1000px);
     transition-duration: 500ms;
     width: 40vw;
     display: flex;
     justify-content: flex-end;
+    min-width: 600px;
+
 }
-.home-about div{
+
+.home-about div {
     flex-direction: column;
     display: flex;
-    gap:20px;
+    gap: 20px;
     max-width: 1000px;
 }
 
-.home-main-right{
+.home-main-right {
     position: relative;
-    left:calc(100vw + 1100px);
+    left: calc(100vw + 1100px);
 }
-.home-header .logo-right{
-    left:50%;
+
+.home-header .logo-right {
+    left: 50%;
 }
- .home-about-left{
+
+.home-about-left {
     left: 10%;
 }
-.detailed{
+
+.detailed {
     animation: show 500ms;
 }
-.home-about button{
-    margin-top:20px;
+
+.home-about button {
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
 }
-.detailed svg{
+
+.detailed svg {
     font-size: 30px;
     position: inherit;
     opacity: 1;
     margin-right: 20px;
 }
-ul{
+
+ul {
     margin-left: 60px;
 }
-.detailed p svg{
+
+.detailed p svg {
     animation-duration: 10s;
 }
-@keyframes show {
-    0%{
-        position: relative;
-        bottom:100px;
-        opacity: 0;
 
-    }
-    100%{
+@keyframes show {
+    0% {
         position: relative;
-        bottom:0;
+        bottom: 100px;
+        opacity: 0;
+    }
+    100% {
+        position: relative;
+        bottom: 0;
         opacity: 1;
+        cursor: default;
     }
 }
+
 @keyframes hide {
-    0%{
+    0% {
         position: relative;
-        bottom:0;
+        bottom: 0;
         opacity: 1;
 
     }
-    100%{
+    100% {
         position: relative;
-        bottom:100px;
+        bottom: 100px;
         opacity: 0;
         display: none;
     }
 }
-div .hidden-detailed{
+
+div .hidden-detailed {
     animation: hide 300ms both;
+    z-index: 0;
+    cursor: default;
 }
+
+.home main {
+    margin-top: 0;
+    justify-content: flex-start;
+}
+
+/* Тело */
+.home-main .home-panel-container {
+    background: rgba(0, 0, 0, 0.44);
+    position: sticky;
+    top: 0px;
+    z-index: 3000;
+    border: 1px solid #676767;
+    border-width: 1px 0;
+    backdrop-filter: blur(5px);
+    max-width: 3000px;
+    min-height: 100px;
+}
+
+.home-main .home-panel-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 100px;
+}
+
+.home-main .home-panel {
+    margin: 0;
+    position: static;
+    width: 1000px;
+}
+
+.home-main .home-panel button {
+    font-family: sans-serif;
+    font-size: 24px;
+    line-height: 50px;
+    height: 55px;
+}
+
+.text-section {
+    width: 50%;
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 24px;
+}
+
+.text-section h3 {
+    font-size: 48px;
+    position: relative;
+    bottom: 30px;
+}
+
+.motivation {
+    max-width: 3000px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
+    padding: 0 10%;
+    min-height: 500px;
+    background: linear-gradient(to bottom, black, rgba(87, 112, 109, 0.32), rgba(87, 112, 109, 0.52), rgba(87, 112, 109, 0.29), black);
+}
+
+.card-section {
+    width: 50%;
+    min-width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 350px;
+    gap: 40px;
+    justify-content: center;
+}
+
+.card {
+    width: 500px;
+    height: 175px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(59, 201, 168, 0.53), rgba(255, 255, 255, 0));
+    background-size: 10000px;
+    background-position: -9000px;
+    border-radius: 20px;
+    flex-direction: column;
+    text-decoration-line: none;
+    transition-duration: 200ms;
+    animation: back-animation 60s infinite both linear;
+}
+
+.card span {
+    font-size: 20px;
+    position: relative;
+    top: 10px;
+}
+
+.card:hover {
+    backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+@keyframes back-animation{
+    0% {
+        background-position: -9000px;
+        background-size: 10000px;
+    }
+    50%{
+        background-position: 0;
+        background-size: 1000px;
+    }
+    100% {
+        background-position: -9000px;
+        background-size: 10000px;
+    }
+}
+.popular{
+    max-width: 3000px;
+    display: flex;
+    flex-direction: column;
+    padding: 100px 0;
+    gap:40px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(137, 208, 171, 0.24), rgba(255, 255, 255, 0));
+}
+.popular h3{
+    position: relative;
+    top:10px;
+    margin-left: 10%;
+    font-size: 48px;
+}
+.popular p{
+    margin-left: 10%;
+    min-width: 500px;
+    max-width: 1000px;
+    width: 70%;
+    font-size: 24px;
+}
+
+.popular-cards{
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 10%;
+    position: relative;
+    top:40px;
+}
+.popular-cards .card{
+    width: 30%;
+    height: auto;
+    aspect-ratio: 2 / 1;
+    animation: none;
+    gap:30px;
+}
+.popular-cards .card:hover{
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
