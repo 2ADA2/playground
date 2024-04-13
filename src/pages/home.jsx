@@ -1,13 +1,38 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPhabricator, faReact, faWikipediaW} from "@fortawesome/free-brands-svg-icons";
-import {useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {Link} from "react-router-dom";
-import {faGamepad, faGhost, faNewspaper, faRodSnake} from "@fortawesome/free-solid-svg-icons";
+import {faGamepad, faGear, faGhost, faNewspaper, faRodSnake} from "@fortawesome/free-solid-svg-icons";
+
+
 
 import("../styles/pages/home.css")
 export const Home = () => {
     const [header, setHeader] = useState(false)
     const [detailed, setDetailed] = useState(false)
+    const [scrollPoint, setScrollPoint] = useState(false)
+
+    const point1 = useRef()
+    const point2 = useRef()
+    const point3 = useRef()
+    const point4 = useRef()
+
+    function checkScroll(){
+        if((point1.current.getBoundingClientRect().top + point1.current.getBoundingClientRect().height) > 0){
+            setScrollPoint(0)
+        } else if((point2.current.getBoundingClientRect().top + point2.current.getBoundingClientRect().height) > 0){
+            setScrollPoint(1)
+        } else if((point3.current.getBoundingClientRect().top + point3.current.getBoundingClientRect().height) > 0){
+            setScrollPoint(2)
+        } else{
+            setScrollPoint(3)
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll",() => checkScroll())
+        return window.removeEventListener("scroll",() => checkScroll())
+    },[])
 
     return (<section className="home">
         <section
@@ -71,8 +96,12 @@ export const Home = () => {
         <main className="home-main">
 
             <div className="home-panel-container">
-                <nav className="home-panel">
-                    <button>
+                <nav className={
+                    "home-panel" + (
+                        (scrollPoint === 0) ? " first"
+                            :(scrollPoint === 1) ?" second"
+                                :(scrollPoint === 2) ? " third" : " fourth")}>
+                    <button onClick={() => window.scrollTo(0, 0)}>
                         Мотивация
                     </button>
                     <button>
@@ -87,7 +116,7 @@ export const Home = () => {
                 </nav>
             </div>
 
-            <section className="motivation">
+            <section className="motivation" ref={point1}>
                 <div className="text-section">
                     <h3>Мотивация</h3>
                     <p>Игры на подобие "змейка" или "2048" называются Гипер-казуалки. В них достаточно интересно играть,
@@ -113,7 +142,7 @@ export const Home = () => {
                 </div>
             </section>
 
-            <section className="popular">
+            <section className="popular" ref={point2}>
                 <h3>Популярность</h3>
                 <p>Одним из ключевых факторов популярности таких игр является их простота и легкость в освоении.
                     Все они имеют интуитивно понятный геймплей и минималистичный дизайн, что делает их
@@ -143,185 +172,62 @@ export const Home = () => {
                     </a>
                 </section>
             </section>
-            <section className="popular">
-                <h3>Популярность</h3>
-                <p>Одним из ключевых факторов популярности таких игр является их простота и легкость в освоении.
-                    Все они имеют интуитивно понятный геймплей и минималистичный дизайн, что делает их
-                    доступными даже для тех, кто никогда раньше не играл в компьютерные игры.
-                    Благодаря этой простоте, игры становятся привлекательными для широкой аудитории,
-                    в том числе для тех, кто не имеет много времени на игры.
-                </p>
+            <section className="important" ref={point3}>
+                <h3>Важность Гипер-казуалок</h3>
+                <h4>
+                    Гипер-казуальные игры важны
+                </h4>
+                <ul>
+                    <li>
+                        они доступны и просты в освоении
+                    </li>
+                    <li>
+                        привлекают новых людей в мир игр
+                    </li>
+                    <li>
+                        развивают реакция и стратегическое мышление
+                    </li>
+                    <li>
+                        улучшают рефлексы и когнитивные навыки
+                    </li>
+                    <li>
+                        имеют простой, но захватывающий геймплей
+                    </li>
+                </ul>
+                <div className="settings-animation">
+                    <div className="settings-container">
+                        <FontAwesomeIcon icon={faGear}/>
+                        <FontAwesomeIcon icon={faGear}/>
+                    </div>
+                </div>
 
-                <section className="card-section popular-cards">
-                    <a className=" card popular-card"
-                       href="https://www.iguides.ru/main/gadgets/pochemu_igra_zmeyka_takaya_populyarnaya_eksperty_rasskazali_/"
-                       target="_blank">
-                        <FontAwesomeIcon icon={faRodSnake}/>
-                        <span>Популярность игры "змейка"</span>
-                    </a>
-                    <a className=" card popular-card"
-                       href="https://habr.com/ru/articles/81469/"
-                       target="_blank">
-                        <FontAwesomeIcon icon={faGamepad}/>
-                        <span>Популярность игры "Tetris"</span>
-                    </a>
-                    <a className=" card popular-card"
-                       href="https://stopgame.ru/blogs/topic/106387/pac_man_vse_chto_vy_hoteli_znat_o_nem"
-                       target="_blank">
-                        <FontAwesomeIcon icon={faGhost}/>
-                        <span>Популярность игры "PacMan"</span>
-                    </a>
-                </section>
             </section>
-            <section className="popular">
-                <h3>Популярность</h3>
-                <p>Одним из ключевых факторов популярности таких игр является их простота и легкость в освоении.
-                    Все они имеют интуитивно понятный геймплей и минималистичный дизайн, что делает их
-                    доступными даже для тех, кто никогда раньше не играл в компьютерные игры.
-                    Благодаря этой простоте, игры становятся привлекательными для широкой аудитории,
-                    в том числе для тех, кто не имеет много времени на игры.
-                </p>
 
-                <section className="card-section popular-cards">
-                    <a className=" card popular-card"
-                       href="https://www.iguides.ru/main/gadgets/pochemu_igra_zmeyka_takaya_populyarnaya_eksperty_rasskazali_/"
-                       target="_blank">
-                        <FontAwesomeIcon icon={faRodSnake}/>
-                        <span>Популярность игры "змейка"</span>
-                    </a>
-                    <a className=" card popular-card"
-                       href="https://habr.com/ru/articles/81469/"
-                       target="_blank">
-                        <FontAwesomeIcon icon={faGamepad}/>
-                        <span>Популярность игры "Tetris"</span>
-                    </a>
-                    <a className=" card popular-card"
-                       href="https://stopgame.ru/blogs/topic/106387/pac_man_vse_chto_vy_hoteli_znat_o_nem"
-                       target="_blank">
-                        <FontAwesomeIcon icon={faGhost}/>
-                        <span>Популярность игры "PacMan"</span>
-                    </a>
-                </section>
-            </section>
-            <section className="popular">
-                <h3>Популярность</h3>
-                <p>Одним из ключевых факторов популярности таких игр является их простота и легкость в освоении.
-                    Все они имеют интуитивно понятный геймплей и минималистичный дизайн, что делает их
-                    доступными даже для тех, кто никогда раньше не играл в компьютерные игры.
-                    Благодаря этой простоте, игры становятся привлекательными для широкой аудитории,
-                    в том числе для тех, кто не имеет много времени на игры.
-                </p>
+            <section className="motivation for-everyone" ref={point4}>
+                <h3>Для всех</h3>
+                <p>Такие игры очень просты в освоении и имеют интуитивно понятный геймплей, поэтому даже дети любят в них
+                    играть.</p>
+                <p>При этом они очень затягивают и можно незаметно скоротать время по пути на работу или учебу
+                    например.</p>
+                <div className="text-section">
+                    <h4>Предлагаем поиграть в 2048!</h4>
+                </div>
 
-                <section className="card-section popular-cards">
-                    <a className=" card popular-card"
-                       href="https://www.iguides.ru/main/gadgets/pochemu_igra_zmeyka_takaya_populyarnaya_eksperty_rasskazali_/"
-                       target="_blank">
-                        <FontAwesomeIcon icon={faRodSnake}/>
-                        <span>Популярность игры "змейка"</span>
+                <div className="card-section">
+                    <a className="card"
+                       target="_blank"
+                       href="https://play2048.co/">
+                        <h3>2048</h3>
+                        <span>на официальном сайте</span>
                     </a>
-                    <a className=" card popular-card"
-                       href="https://habr.com/ru/articles/81469/"
-                       target="_blank">
-                        <FontAwesomeIcon icon={faGamepad}/>
-                        <span>Популярность игры "Tetris"</span>
+                    <a className="card"
+                       target="_blank"
+                       href="#">
+                        <h3>2048</h3>
+                        <span>на этом сайте</span>
                     </a>
-                    <a className=" card popular-card"
-                       href="https://stopgame.ru/blogs/topic/106387/pac_man_vse_chto_vy_hoteli_znat_o_nem"
-                       target="_blank">
-                        <FontAwesomeIcon icon={faGhost}/>
-                        <span>Популярность игры "PacMan"</span>
-                    </a>
-                </section>
-            </section>
-            <section className="popular">
-                <h3>Популярность</h3>
-                <p>Одним из ключевых факторов популярности таких игр является их простота и легкость в освоении.
-                    Все они имеют интуитивно понятный геймплей и минималистичный дизайн, что делает их
-                    доступными даже для тех, кто никогда раньше не играл в компьютерные игры.
-                    Благодаря этой простоте, игры становятся привлекательными для широкой аудитории,
-                    в том числе для тех, кто не имеет много времени на игры.
-                </p>
+                </div>
 
-                <section className="card-section popular-cards">
-                    <a className=" card popular-card"
-                       href="https://www.iguides.ru/main/gadgets/pochemu_igra_zmeyka_takaya_populyarnaya_eksperty_rasskazali_/"
-                       target="_blank">
-                        <FontAwesomeIcon icon={faRodSnake}/>
-                        <span>Популярность игры "змейка"</span>
-                    </a>
-                    <a className=" card popular-card"
-                       href="https://habr.com/ru/articles/81469/"
-                       target="_blank">
-                        <FontAwesomeIcon icon={faGamepad}/>
-                        <span>Популярность игры "Tetris"</span>
-                    </a>
-                    <a className=" card popular-card"
-                       href="https://stopgame.ru/blogs/topic/106387/pac_man_vse_chto_vy_hoteli_znat_o_nem"
-                       target="_blank">
-                        <FontAwesomeIcon icon={faGhost}/>
-                        <span>Популярность игры "PacMan"</span>
-                    </a>
-                </section>
-            </section>
-            <section className="popular">
-                <h3>Популярность</h3>
-                <p>Одним из ключевых факторов популярности таких игр является их простота и легкость в освоении.
-                    Все они имеют интуитивно понятный геймплей и минималистичный дизайн, что делает их
-                    доступными даже для тех, кто никогда раньше не играл в компьютерные игры.
-                    Благодаря этой простоте, игры становятся привлекательными для широкой аудитории,
-                    в том числе для тех, кто не имеет много времени на игры.
-                </p>
-
-                <section className="card-section popular-cards">
-                    <a className=" card popular-card"
-                       href="https://www.iguides.ru/main/gadgets/pochemu_igra_zmeyka_takaya_populyarnaya_eksperty_rasskazali_/"
-                       target="_blank">
-                        <FontAwesomeIcon icon={faRodSnake}/>
-                        <span>Популярность игры "змейка"</span>
-                    </a>
-                    <a className=" card popular-card"
-                       href="https://habr.com/ru/articles/81469/"
-                       target="_blank">
-                        <FontAwesomeIcon icon={faGamepad}/>
-                        <span>Популярность игры "Tetris"</span>
-                    </a>
-                    <a className=" card popular-card"
-                       href="https://stopgame.ru/blogs/topic/106387/pac_man_vse_chto_vy_hoteli_znat_o_nem"
-                       target="_blank">
-                        <FontAwesomeIcon icon={faGhost}/>
-                        <span>Популярность игры "PacMan"</span>
-                    </a>
-                </section>
-            </section>
-            <section className="popular">
-                <h3>Популярность</h3>
-                <p>Одним из ключевых факторов популярности таких игр является их простота и легкость в освоении.
-                    Все они имеют интуитивно понятный геймплей и минималистичный дизайн, что делает их
-                    доступными даже для тех, кто никогда раньше не играл в компьютерные игры.
-                    Благодаря этой простоте, игры становятся привлекательными для широкой аудитории,
-                    в том числе для тех, кто не имеет много времени на игры.
-                </p>
-
-                <section className="card-section popular-cards">
-                    <a className=" card popular-card"
-                       href="https://www.iguides.ru/main/gadgets/pochemu_igra_zmeyka_takaya_populyarnaya_eksperty_rasskazali_/"
-                       target="_blank">
-                        <FontAwesomeIcon icon={faRodSnake}/>
-                        <span>Популярность игры "змейка"</span>
-                    </a>
-                    <a className=" card popular-card"
-                       href="https://habr.com/ru/articles/81469/"
-                       target="_blank">
-                        <FontAwesomeIcon icon={faGamepad}/>
-                        <span>Популярность игры "Tetris"</span>
-                    </a>
-                    <a className=" card popular-card"
-                       href="https://stopgame.ru/blogs/topic/106387/pac_man_vse_chto_vy_hoteli_znat_o_nem"
-                       target="_blank">
-                        <FontAwesomeIcon icon={faGhost}/>
-                        <span>Популярность игры "PacMan"</span>
-                    </a>
-                </section>
             </section>
         </main>
 
