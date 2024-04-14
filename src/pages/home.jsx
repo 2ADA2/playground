@@ -1,7 +1,6 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPhabricator, faReact, faWikipediaW} from "@fortawesome/free-brands-svg-icons";
 import {useEffect, useRef, useState} from "react";
-import {Link} from "react-router-dom";
 import {faGamepad, faGear, faGhost, faNewspaper, faRodSnake} from "@fortawesome/free-solid-svg-icons";
 
 
@@ -30,9 +29,17 @@ export const Home = () => {
     }
 
     useEffect(() => {
-        window.addEventListener("scroll",() => checkScroll())
-        return window.removeEventListener("scroll",() => checkScroll())
+        setTimeout(() => {
+            window.addEventListener("scroll",checkScroll)
+        }, 100)
+        return () => {
+            window.removeEventListener("scroll", checkScroll)
+        }
     },[])
+
+    function scrollTo(point){
+        point.current.scrollIntoView({behavior: "smooth"})
+    }
 
     return (<section className="home">
         <section
@@ -101,16 +108,16 @@ export const Home = () => {
                         (scrollPoint === 0) ? " first"
                             :(scrollPoint === 1) ?" second"
                                 :(scrollPoint === 2) ? " third" : " fourth")}>
-                    <button onClick={() => window.scrollTo(0, 0)}>
+                    <button onClick={() => scrollTo(point1)}>
                         Мотивация
                     </button>
-                    <button>
+                    <button onClick={() => scrollTo(point2)}>
                         Популярность
                     </button>
-                    <button>
+                    <button onClick={() => scrollTo(point3)}>
                         Важность
                     </button>
-                    <button>
+                    <button onClick={() => scrollTo(point4)}>
                         Для всех
                     </button>
                 </nav>
@@ -204,11 +211,14 @@ export const Home = () => {
             </section>
 
             <section className="motivation for-everyone" ref={point4}>
-                <h3>Для всех</h3>
-                <p>Такие игры очень просты в освоении и имеют интуитивно понятный геймплей, поэтому даже дети любят в них
-                    играть.</p>
-                <p>При этом они очень затягивают и можно незаметно скоротать время по пути на работу или учебу
-                    например.</p>
+                <div>
+                    <h3>Для всех</h3>
+                    <p>Такие игры очень просты в освоении и имеют интуитивно понятный геймплей, поэтому даже дети любят
+                        в них
+                        играть.</p>
+                    <p>При этом они очень затягивают и можно незаметно скоротать время по пути на работу или учебу
+                        например.</p>
+                </div>
                 <div className="text-section">
                     <h4>Предлагаем поиграть в 2048!</h4>
                 </div>

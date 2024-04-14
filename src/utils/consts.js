@@ -1,3 +1,10 @@
-export const HOME = "/home"
-export const PLAYGROUND = "/playground"
-export const PROFILE = "/profile"
+export const HOME_ROUTE = "/"
+export const PLAYGROUND_ROUTE = "/playground"
+export const Stats_ROUTE = "/stats"
+export const ABOUT_ROUTE = "/about"
+
+export const TTFE_ROUTE = "/playground/ttfe"
+export const THESNAKE_ROUTE = "/playground/thesnake"
+export const KEYBOARD_ROUTE = "/playground/keyboard"
+export const ARROWCLICK_ROUTE = "/playground/arrowclick"
+export const TICTACTOE_ROUTE = "/playground/tictactoe"

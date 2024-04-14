@@ -222,8 +222,8 @@ div .hidden-detailed {
 .home-main .home-panel-container {
     background: rgba(0, 0, 0, 0.44);
     position: sticky;
-    top: 0px;
-    z-index: 3000;
+    top: 0;
+    z-index: 3;
     border: 1px solid #676767;
     border-width: 1px 0;
     backdrop-filter: blur(5px);
@@ -242,6 +242,16 @@ div .hidden-detailed {
     margin: 0;
     position: static;
     width: 1000px;
+}
+
+.home-main .fourth:before{
+    transform: translateX(374px);
+}
+.home-main .third:before{
+    transform: translateX(125px);
+}
+.home-main .first:before{
+    transform: translateX(-374px);
 }
 
 .home-main .home-panel button {
@@ -368,6 +378,8 @@ div .hidden-detailed {
 }
 
 .important{
+    border-top: 1px solid rgba(255, 255, 255, 0.35);
+    overflow: hidden;
     max-width: 3000px;
     height: 600px;
     display: flex;
@@ -395,23 +407,24 @@ div .hidden-detailed {
     position: absolute;
     max-width: 3000px;
     width: 100%;
-    height: 600px;
+    min-width: 1300px;
+    height: 800px;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     left:0;
     font-size: 600px;
-    overflow: hidden;
     opacity: 0.5;
 }
 .settings-animation svg{
-    animation: gear-animation 58s infinite linear;
+    animation: gear-animation 40s infinite linear;
     position: relative;
     left: 400px;
     animation-delay: 1s;
 }
 .settings-animation svg:last-child{
-    animation: gear-animation 60s infinite linear reverse;
+    animation: gear-animation 40s infinite linear reverse;
     left:250px;
     top:-100px;
     font-size: 700px;
@@ -432,8 +445,8 @@ div .hidden-detailed {
     padding-bottom: 0;
     font-size: 30px;
     flex-direction: column;
-    height: 1000px;
-    background: radial-gradient(circle at center 1500px, rgba(87, 137, 178, 0.66), rgba(255, 255, 255, 0));
+    height: 1700px;
+    background: radial-gradient(circle at center 2800px, rgba(76, 151, 178, 0.62), rgba(255, 255, 255, 0));
 }
 .for-everyone h3{
     font-size: 48px;
@@ -442,6 +455,7 @@ div .hidden-detailed {
 .for-everyone p {
     max-width: 1000px;
     text-align: center;
+    margin-top:20px
 }
 .for-everyone .text-section{
     width: 50%;
@@ -458,4 +472,20 @@ div .hidden-detailed {
     font-size: 50px;
     color: #5edaab;
     text-shadow: 0 0 50px #5edaab;
+}
+
+.motivation, .popular, .important{
+    min-height: 800px;
+    min-width: 1000px;
+}
+
+.for-everyone{
+    min-height: 1200px;
+}
+.for-everyone div{
+    text-align: center;
+}
+
+.card{
+    text-align: center;
 }
