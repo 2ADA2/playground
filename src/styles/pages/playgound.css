@@ -1,168 +1,636 @@
-.playground{
-    min-height: 2000px;
+.playground {
+    min-height: 1300px;
+    width: 100vw;
+    z-index: 0;
 }
-.playground-back-container{
+
+.playground-back-container {
     position: absolute;
     width: 100%;
     height: 500px;
-    left:0;
+    left: 0;
     overflow: hidden;
+    background: linear-gradient(to right, #000, #000, #609, #c01f9a, #f97451);
+    background-size: 8000px;
 }
-.playground-logo-header{
+
+.playground-logo-header {
     height: 500px;
     padding-left: 30%;
     display: flex;
     align-items: center;
     overflow: hidden;
 }
-.playground-logo-header a{
+
+.playground-logo-header h2 {
+    position: absolute;
+    z-index: 100;
+    left: 500px;
+    min-width: 1300px;
+    font-size: 140px;
+    color: rgba(255, 255, 255, 0.91);
+    animation: show-playground-text 0.5s;
+}
+
+.playground-logo-header h3 {
+    position: absolute;
+    z-index: 100;
+    left: 500px;
+    min-width: 1300px;
+    font-size: 48px;
+    font-weight: 300;
+    top: 420px;
+    color: rgba(255, 255, 255, 0.91);
+    animation: show-playground-text 0.5s;
+}
+
+@keyframes show-playground-text {
+    0% {
+        opacity: 0;
+        left: 400px;
+    }
+    100% {
+        opacity: 1;
+        left: 500px;
+
+    }
+}
+
+.playground-logo-header a {
     position: absolute;
     z-index: 120;
     background: white;
-    left:360px;
+    left: 360px;
     height: 100px;
     transition-duration: 300ms;
+    border-radius: 10px;
 }
-.playground-logo-header a:hover{
-    box-shadow: 0 0 30px white;
+
+.playground-logo-header a:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.24);
 }
-.playground h2{
-    font-size: 48px;
+
+.game-buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    gap: 10px;
+    margin-top: 40px;
+    padding: 0 10%;
+    max-width: 3000px;
 }
-.logo-block{
+
+.game-buttons button {
+    color: #cccccc;
+    width: 25%;
+    height: 100px;
+    font-size: clamp(20px, 2vw, 40px);
+    max-width: 25%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), #609, #c01f9a, #f97451, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+    background-size: 300%;
+    background-position: -50%;
+    transition-duration: 500ms;
+    font-weight: 600;
+}
+
+.game-buttons button:hover {
+    background-size: 300%;
+    color: white;
+    background-position: 20%;
+}
+
+.game-buttons .active {
+    color: white;
+    background-size: 300%;
+    background-position: 30%;
+}
+
+.game-buttons .active:hover {
+    background-size: 300%;
+    background-position: 30%;
+}
+
+.games-container {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.game-preview {
+    font-size: 24px;
+    height: 800px;
+    max-width: 3000px;
+    width: 100%;
+    position: absolute;
+    left: calc(100% + 40vw);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    transition-duration: 300ms;
+    background: radial-gradient(circle at right, rgba(102, 0, 153, 0.49), #000);
+    top: -140px;
+    z-index: -1;
+    padding-top: 200px;
+    padding-left: 200px;
+}
+
+.game-preview h3 {
+    font-size: 150px;
+}
+
+.game-preview .game-preview-header {
+    display: flex;
+    gap: 40px;
+    font-size: 40px;
+}
+
+.game-preview-header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-weight: 100;
+}
+
+.game-preview-header-container span {
+    margin-left: 30px;
+}
+
+.game-preview .card {
+    width: 250px;
+    height: 250px;
+    flex-direction: row;
+    gap: 20px;
+    font-size: 100px;
+}
+
+.game-preview p{
+    font-weight: 100;
+    width: 70%;
+    font-size: 28px;
+}
+
+
+
+
+.games-container .game-preview-opened {
+    left: 0;
+    transition-duration: 500ms;
+}
+
+.games-container .game-preview:nth-child(2) {
+    background: radial-gradient(circle at 2000px bottom, rgba(218, 67, 158, 0.45), #000);
+}
+
+.games-container .game-preview:nth-child(3) {
+    background: radial-gradient(circle at right bottom, rgba(126, 204, 186, 0.32), #000);
+}
+
+.games-container .game-preview:nth-child(4) {
+    background: radial-gradient(circle at 2000px 1000px, rgba(242, 248, 19, 0.27), #000);
+}
+
+
+/* header-animation */
+.logo-block {
     position: absolute;
     z-index: 99;
-    background: linear-gradient(to right bottom, #000,#000, #000, #609, #c01f9a, #f97451);
+    background: linear-gradient(to right bottom, #000, #000, #000, #4a0099, #c01f9a, #f97451);
     width: 120px;
     height: 120px;
     border-radius: 10px;
-    left:350px;
-    top:190px;
+    left: 350px;
+    top: 190px;
 }
 
-.logo-block:nth-child(2){
+.logo-block:nth-child(2) {
     z-index: 98;
-    width: 130px;
-    height: 130px;
-    rotate: 5deg;
-    border-radius: 11px;
-    top:200px;
-    left:360px;
+    animation: block-1 0.5s both;
 }
-.logo-block:nth-child(3){
+
+.logo-block:nth-child(3) {
     z-index: 97;
-    width: 160px;
-    height: 160px;
-    rotate: 8deg;
-    border-radius: 13px;
-    top:200px;
-    left:360px;
+    animation: block-2 0.5s both;
 }
-.logo-block:nth-child(4){
+
+.logo-block:nth-child(4) {
     z-index: 96;
-    width: 200px;
-    height: 200px;
-    rotate: 11deg;
-    border-radius: 16px;
-    top:200px;
-    left:360px;
+    animation: block-3 0.5s both;
 }
-.logo-block:nth-child(5){
+
+.logo-block:nth-child(5) {
     z-index: 95;
-    width: 250px;
-    height: 250px;
-    rotate: 4deg;
-    border-radius: 23px;
-    top:190px;
-    left:350px;
+    animation: block-4 0.5s both;
 }
-.logo-block:nth-child(6){
+
+.logo-block:nth-child(6) {
     z-index: 94;
-    width: 300px;
-    height: 300px;
-    rotate: -3deg;
-    border-radius: 30px;
-    top:170px;
-    left:340px;
+    animation: block-5 0.5s both;
 }
-.logo-block:nth-child(7){
+
+.logo-block:nth-child(7) {
     z-index: 93;
-    width: 400px;
-    height: 400px;
-    rotate: -10deg;
-    border-radius: 50px;
-    top:130px;
-    left:320px;
+    animation: block-6 0.5s both;
 }
-.logo-block:nth-child(8){
+
+.logo-block:nth-child(8) {
     z-index: 92;
-    width: 550px;
-    height: 550px;
-    rotate: -20deg;
-    border-radius: 70px;
-    top:50px;
-    left:270px;
+    animation: block-7 0.5s both;
 }
-.logo-block:nth-child(9){
+
+.logo-block:nth-child(9) {
     z-index: 91;
-    width: 700px;
-    height: 700px;
-    rotate: -30deg;
-    border-radius: 100px;
-    top:0;
-    left:250px;
+    animation: block-8 0.5s both;
 }
-.logo-block:nth-child(10){
+
+.logo-block:nth-child(10) {
     z-index: 90;
-    width: 1000px;
-    height: 1000px;
-    rotate: -44deg;
-    border-radius: 150px;
-    top:0;
-    left:200px;
+    animation: block-9 0.5s both;
 }
-.logo-block:nth-child(11){
+
+.logo-block:nth-child(11) {
     z-index: 89;
-    width: 1300px;
-    height: 1300px;
-    rotate: -50deg;
-    border-radius: 200px;
-    top:-130px;
-    left:100px;
+    animation: block-10 0.5s both;
 }
-.logo-block:nth-child(12){
+
+.logo-block:nth-child(12) {
     z-index: 88;
-    width: 1600px;
-    height: 1600px;
-    rotate: -60deg;
-    border-radius: 300px;
-    top:-250px;
-    left:50px;
+    animation: block-11 0.5s both;
 }
-.logo-block:nth-child(13){
+
+.logo-block:nth-child(13) {
     z-index: 87;
-    width: 2000px;
-    height: 2000px;
-    rotate: -65deg;
-    border-radius: 500px;
-    top:-500px;
-    left:0;
+    animation: block-12 0.5s both;
 }
-.logo-block:nth-child(14){
+
+.logo-block:nth-child(14) {
     z-index: 86;
-    width: 4000px;
-    height: 4000px;
-    rotate: -80deg;
-    border-radius: 1000px;
-    top:-700px;
-    left:0;
+    animation: block-13 0.5s both;
 }
-.logo-block:nth-child(15){
+
+.logo-block:nth-child(15) {
     z-index: 85;
-    width: 10000px;
-    height: 10000px;
-    rotate: -80deg;
-    border-radius: 2000px;
-    top:-700px;
-    left:0;
+    animation: block-14 0.5s both;
+}
+
+.logo-block:nth-child(16) {
+    z-index: 84;
+    animation: block-15 0.5s both;
+}
+
+.logo-block:nth-child(17) {
+    z-index: 83;
+    animation: block-16 0.5s both;
+}
+
+@keyframes block-1 {
+    0% {
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+        left: 350px;
+        top: 190px;
+    }
+    100% {
+        width: 130px;
+        height: 130px;
+        border-radius: 13px;
+        left: 355px;
+        top: 195px;
+        rotate: -3deg;
+    }
+}
+
+@keyframes block-2 {
+    0% {
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+        left: 350px;
+        top: 190px;
+    }
+    100% {
+        width: 140px;
+        height: 140px;
+        border-radius: 14px;
+        left: 365px;
+        top: 200px;
+        rotate: -8deg;
+    }
+}
+
+@keyframes block-3 {
+    0% {
+        width: 120px;
+        height: 120px;
+        border-radius: 15px;
+        left: 350px;
+        top: 190px;
+    }
+    100% {
+        width: 155px;
+        height: 155px;
+        border-radius: 15px;
+        left: 380px;
+        top: 200px;
+        rotate: -15deg;
+    }
+}
+
+@keyframes block-4 {
+    0% {
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+        left: 350px;
+        top: 190px;
+    }
+    100% {
+        width: 190px;
+        height: 190px;
+        border-radius: 19px;
+        left: 390px;
+        top: 180px;
+        rotate: -20deg;
+    }
+}
+
+@keyframes block-5 {
+    0% {
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+        left: 350px;
+        top: 210px;
+    }
+    100% {
+        width: 210px;
+        height: 210px;
+        border-radius: 21px;
+        left: 410px;
+        top: 170px;
+        rotate: -30deg;
+    }
+}
+
+@keyframes block-6 {
+    0% {
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+        left: 350px;
+        top: 190px;
+    }
+    100% {
+        width: 250px;
+        height: 250px;
+        border-radius: 25px;
+        left: 420px;
+        top: 130px;
+        rotate: -40deg;
+    }
+}
+
+@keyframes block-7 {
+    0% {
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+        left: 350px;
+        top: 190px;
+    }
+    100% {
+        width: 280px;
+        height: 280px;
+        border-radius: 28px;
+        left: 440px;
+        top: 90px;
+        rotate: -50deg;
+    }
+}
+
+@keyframes block-8 {
+    0% {
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+        left: 350px;
+        top: 190px;
+    }
+    100% {
+        width: 340px;
+        height: 340px;
+        border-radius: 34px;
+        left: 450px;
+        top: 10px;
+        rotate: -55deg;
+    }
+}
+
+@keyframes block-9 {
+    0% {
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+        left: 350px;
+        top: 190px;
+    }
+    20% {
+        width: 340px;
+        height: 340px;
+        border-radius: 34px;
+        left: 440px;
+        top: 10px;
+        rotate: -60deg;
+    }
+    100% {
+        width: 420px;
+        height: 420px;
+        border-radius: 42px;
+        left: 470px;
+        top: -90px;
+        rotate: -50deg;
+    }
+}
+
+@keyframes block-10 {
+    0% {
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+        left: 350px;
+        top: 190px;
+    }
+    15% {
+        width: 340px;
+        height: 340px;
+        border-radius: 34px;
+        left: 440px;
+        top: 10px;
+        rotate: -60deg;
+    }
+    100% {
+        width: 500px;
+        height: 500px;
+        border-radius: 50px;
+        left: 540px;
+        top: -170px;
+        rotate: -40deg;
+    }
+}
+
+@keyframes block-11 {
+    0% {
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+        left: 350px;
+        top: 190px;
+    }
+    20% {
+        width: 340px;
+        height: 340px;
+        border-radius: 34px;
+        left: 440px;
+        top: 10px;
+        rotate: -60deg;
+    }
+    100% {
+        width: 600px;
+        height: 600px;
+        border-radius: 60px;
+        left: 600px;
+        top: -250px;
+        rotate: -30deg;
+    }
+}
+
+@keyframes block-12 {
+    0% {
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+        left: 350px;
+        top: 190px;
+    }
+    20% {
+        width: 340px;
+        height: 340px;
+        border-radius: 34px;
+        left: 440px;
+        top: 10px;
+        rotate: -60deg;
+    }
+    100% {
+        width: 750px;
+        height: 750px;
+        border-radius: 75px;
+        left: 680px;
+        top: -350px;
+        rotate: -20deg;
+    }
+}
+
+@keyframes block-13 {
+    0% {
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+        left: 350px;
+        top: 190px;
+    }
+    20% {
+        width: 340px;
+        height: 340px;
+        border-radius: 34px;
+        left: 440px;
+        top: 10px;
+        rotate: -60deg;
+    }
+    100% {
+        width: 900px;
+        height: 900px;
+        border-radius: 90px;
+        left: 750px;
+        top: -350px;
+        rotate: -20deg;
+    }
+}
+
+@keyframes block-14 {
+    0% {
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+        left: 350px;
+        top: 190px;
+    }
+    20% {
+        width: 340px;
+        height: 340px;
+        border-radius: 34px;
+        left: 440px;
+        top: 10px;
+        rotate: -60deg;
+    }
+    100% {
+        width: 1100px;
+        height: 1100px;
+        border-radius: 110px;
+        left: 850px;
+        top: -350px;
+        rotate: -10deg;
+    }
+}
+
+@keyframes block-15 {
+    0% {
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+        left: 350px;
+        top: 190px;
+    }
+    20% {
+        width: 340px;
+        height: 340px;
+        border-radius: 34px;
+        left: 440px;
+        top: 10px;
+        rotate: -60deg;
+    }
+    100% {
+        width: 1700px;
+        height: 1700px;
+        border-radius: 170px;
+        left: 800px;
+        top: -400px;
+        rotate: 0deg;
+    }
+}
+
+@keyframes block-16 {
+    0% {
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+        left: 350px;
+        top: 190px;
+    }
+    20% {
+        width: 340px;
+        height: 340px;
+        border-radius: 34px;
+        left: 440px;
+        top: 10px;
+        rotate: -60deg;
+    }
+    100% {
+        width: 2400px;
+        height: 2400px;
+        border-radius: 240px;
+        left: 800px;
+        top: -400px;
+        rotate: -10deg;
+    }
 }

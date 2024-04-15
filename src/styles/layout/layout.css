@@ -26,7 +26,7 @@ header{
     background-color: white;
 }
 .logo a svg:hover{
-    box-shadow: 1px 1px 50px rgba(252, 252, 252, 0.15);
+    box-shadow: 1px 1px 50px rgba(255, 255, 255, 0.16);
 }
 
 header nav{
@@ -38,12 +38,9 @@ header nav{
     letter-spacing: 1px;
     height: 100%;
 }
-header nav a:nth-child(1){
-    border-left:1px solid rgba(255, 255, 255, 0.2);
-}
 header nav a{
+    color: rgba(255, 255, 255, 0.8);
     min-width: 150px;
-    border-right:1px solid rgba(255, 255, 255, 0.2);
     height: 100%;
     display: flex;
     align-items: center;
@@ -51,8 +48,9 @@ header nav a{
     padding: 0 20px;
 }
 header nav a:hover{
-    text-shadow: 1px 1px 10px rgba(252, 252, 252, 0.4);
-    background-color: #262049;
+    text-shadow: 1px 1px 10px rgba(252, 252, 252, 0.59);
+    background-color: rgba(38, 32, 73, 0.68);
+    color:white;
 }
 
 .playground-search-container{
@@ -61,7 +59,7 @@ header nav a:hover{
     width: 100%;
     background-color: rgba(0, 0, 0, 0.6);
     min-width: 1090px;
-    top:76px;
+    top:75px;
     left:0;
     transition-duration: 1s;
     animation: show-search 300ms ;

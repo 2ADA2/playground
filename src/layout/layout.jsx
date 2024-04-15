@@ -16,14 +16,13 @@ import("../styles/layout/layout.css")
 
 const icoStyle = {"width": "30px", "height": "30px"}
 
-let scrollHeight = Math.max(
-    document.body.scrollHeight, document.documentElement.scrollHeight,
-    document.body.offsetHeight, document.documentElement.offsetHeight,
-    document.body.clientHeight, document.documentElement.clientHeight
-);
-
 export const Layout = () => {
     const [nav, setNav] = useState(false)
+    let scrollHeight = Math.max(
+        document.body.scrollHeight, document.documentElement.scrollHeight,
+        document.body.offsetHeight, document.documentElement.offsetHeight,
+        document.body.clientHeight, document.documentElement.clientHeight
+    );
     return(
         <>
             <header>
@@ -40,7 +39,7 @@ export const Layout = () => {
 
             </header>
             <div
-                style={{height : scrollHeight - 75}}
+                style={{height : scrollHeight - 75 + "px"}}
                 className={(nav) ? "playground-search-container" : "playground-search-container playground-search-container-hide"}
                 onClick={() => setNav(false)}
             >
