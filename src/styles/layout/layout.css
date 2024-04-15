@@ -137,7 +137,7 @@ header nav a:hover{
 }
 .playground-search a:hover{
     color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.03);
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 .playground-search .search-links{
