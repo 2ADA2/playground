@@ -175,10 +175,11 @@ footer div{
 footer p{
     width: 40%;
     font-size: 16px;
+    font-weight: 300;
 }
 footer div h2{
     font-size: 24px;
-    font-weight: 100;
+    font-weight: 300;
 }
 footer div a{
     display: flex;

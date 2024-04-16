@@ -2,6 +2,8 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPhabricator, faReact, faWikipediaW} from "@fortawesome/free-brands-svg-icons";
 import {useEffect, useRef, useState} from "react";
 import {faGamepad, faGear, faGhost, faNewspaper, faRodSnake} from "@fortawesome/free-solid-svg-icons";
+import {TTFE_ROUTE} from "../utils/consts";
+import {Link} from "react-router-dom";
 
 
 
@@ -59,15 +61,14 @@ export const Home = () => {
                         <h2>ADA's</h2>
                         <h2>PLAYGROUND</h2>
                     </div>
-                    <h2>Сборник проектов</h2>
+                    <h2>Сборник игр</h2>
                     <p className="p-opacity">Место для развлечений и отдыха</p>
                 </section>
                 <section className={(!header) ? "home-about" : "home-about home-about-left"}>
                     <div>
                         <h2>О проекте</h2>
-                        <p>Проект PLAYROUND представляет собой web-приложение, которое включает в себя все мои
-                            предыдущие
-                            проекты, а именно игры.</p>
+                        <p>Проект PLAYROUND представляет собой web-приложение, которое включает в себя разные
+                            игры, а именно гипер-казуальные.</p>
                         <p>Дата начала разработки: 06.05.2024</p>
                         <p>Разработчик: Дубровский Артём (ГГОЛ)</p>
                         <p>Содействовали: Потапченко Арсений (ГГОЛ), MR.PEN (пасхалко)</p>
@@ -230,12 +231,11 @@ export const Home = () => {
                         <h3>2048</h3>
                         <span>на официальном сайте</span>
                     </a>
-                    <a className="card"
-                       target="_blank"
-                       href="#">
+                    <Link className="card"
+                       to={TTFE_ROUTE} onClick={() => window.scrollTo(0,0)}>
                         <h3>2048</h3>
                         <span>на этом сайте</span>
-                    </a>
+                    </Link>
                 </div>
 
             </section>

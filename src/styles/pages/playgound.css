@@ -1,13 +1,15 @@
 .playground {
-    min-height: 1300px;
+    min-height: 1700px;
     width: 100vw;
     z-index: 0;
 }
 
 .playground-back-container {
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 500px;
+    display: flex;
+    justify-content: center;
     left: 0;
     overflow: hidden;
     background: linear-gradient(to right, #000, #000, #609, #c01f9a, #f97451);
@@ -15,8 +17,8 @@
 }
 
 .playground-logo-header {
+    position: relative;
     height: 500px;
-    padding-left: 30%;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -37,9 +39,9 @@
     z-index: 100;
     left: 500px;
     min-width: 1300px;
-    font-size: 48px;
+    font-size: clamp(30px, 2vw, 50px);
     font-weight: 300;
-    top: 420px;
+    top: 340px;
     color: rgba(255, 255, 255, 0.91);
     animation: show-playground-text 0.5s;
 }
@@ -73,12 +75,15 @@
 .game-buttons {
     display: flex;
     justify-content: center;
+    position: relative;
+    z-index: 2;
     width: 100%;
     min-width: 0;
     gap: 10px;
-    margin-top: 40px;
     padding: 0 10%;
     max-width: 3000px;
+    margin: auto;
+    margin-top: 40px;
 }
 
 .game-buttons button {
@@ -119,24 +124,23 @@
 
 .game-preview {
     font-size: 24px;
-    height: 800px;
-    max-width: 3000px;
+    min-height: 1200px;
     width: 100%;
     position: absolute;
     left: calc(100% + 40vw);
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 100px;
     transition-duration: 300ms;
     background: radial-gradient(circle at right, rgba(102, 0, 153, 0.49), #000);
     top: -140px;
-    z-index: -1;
+    z-index: 0;
     padding-top: 200px;
     padding-left: 200px;
 }
 
 .game-preview h3 {
-    font-size: 150px;
+    font-size: clamp(100px, 8vw, 150px);
 }
 
 .game-preview .game-preview-header {
@@ -152,9 +156,6 @@
     font-weight: 100;
 }
 
-.game-preview-header-container span {
-    margin-left: 30px;
-}
 
 .game-preview .card {
     width: 250px;
@@ -167,9 +168,15 @@
 .game-preview p{
     font-weight: 100;
     width: 70%;
-    font-size: 28px;
+    max-width: 2000px;
+    min-width: 700px;
+    font-size: clamp(10px, 1.5vw, 40px);
 }
-
+.game-preview button{
+    width: 300px;
+    height: 80px;
+    font-size: 40px;
+}
 
 
 
@@ -179,7 +186,7 @@
 }
 
 .games-container .game-preview:nth-child(2) {
-    background: radial-gradient(circle at 2000px bottom, rgba(218, 67, 158, 0.45), #000);
+    background: radial-gradient(circle at 70% bottom, rgba(218, 67, 158, 0.45), #000);
 }
 
 .games-container .game-preview:nth-child(3) {
@@ -187,12 +194,12 @@
 }
 
 .games-container .game-preview:nth-child(4) {
-    background: radial-gradient(circle at 2000px 1000px, rgba(242, 248, 19, 0.27), #000);
+    background: radial-gradient(circle at 70% 1000px, rgba(242, 248, 19, 0.27), #000);
 }
 
 
 /* header-animation */
-.logo-block {
+.game-header-block {
     position: absolute;
     z-index: 99;
     background: linear-gradient(to right bottom, #000, #000, #000, #4a0099, #c01f9a, #f97451);
@@ -203,82 +210,82 @@
     top: 190px;
 }
 
-.logo-block:nth-child(2) {
+.game-header-block:nth-child(2) {
     z-index: 98;
     animation: block-1 0.5s both;
 }
 
-.logo-block:nth-child(3) {
+.game-header-block:nth-child(3) {
     z-index: 97;
     animation: block-2 0.5s both;
 }
 
-.logo-block:nth-child(4) {
+.game-header-block:nth-child(4) {
     z-index: 96;
     animation: block-3 0.5s both;
 }
 
-.logo-block:nth-child(5) {
+.game-header-block:nth-child(5) {
     z-index: 95;
     animation: block-4 0.5s both;
 }
 
-.logo-block:nth-child(6) {
+.game-header-block:nth-child(6) {
     z-index: 94;
     animation: block-5 0.5s both;
 }
 
-.logo-block:nth-child(7) {
+.game-header-block:nth-child(7) {
     z-index: 93;
     animation: block-6 0.5s both;
 }
 
-.logo-block:nth-child(8) {
+.game-header-block:nth-child(8) {
     z-index: 92;
     animation: block-7 0.5s both;
 }
 
-.logo-block:nth-child(9) {
+.game-header-block:nth-child(9) {
     z-index: 91;
     animation: block-8 0.5s both;
 }
 
-.logo-block:nth-child(10) {
+.game-header-block:nth-child(10) {
     z-index: 90;
     animation: block-9 0.5s both;
 }
 
-.logo-block:nth-child(11) {
+.game-header-block:nth-child(11) {
     z-index: 89;
     animation: block-10 0.5s both;
 }
 
-.logo-block:nth-child(12) {
+.game-header-block:nth-child(12) {
     z-index: 88;
     animation: block-11 0.5s both;
 }
 
-.logo-block:nth-child(13) {
+.game-header-block:nth-child(13) {
     z-index: 87;
     animation: block-12 0.5s both;
 }
 
-.logo-block:nth-child(14) {
+.game-header-block:nth-child(14) {
     z-index: 86;
     animation: block-13 0.5s both;
 }
 
-.logo-block:nth-child(15) {
+.game-header-block:nth-child(15) {
     z-index: 85;
     animation: block-14 0.5s both;
 }
 
-.logo-block:nth-child(16) {
+.game-header-block:nth-child(16) {
     z-index: 84;
     animation: block-15 0.5s both;
 }
 
-.logo-block:nth-child(17) {
+.game-header-block:nth-child(17) {
     z-index: 83;
     animation: block-16 0.5s both;
 }

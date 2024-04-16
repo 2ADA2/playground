@@ -1,0 +1,67 @@
+.loose{
+    width:600px;
+    height:600px;
+    left: calc(50vw);
+    transform:translate(-50%, 0%);
+    background-color: #2a2a2a88;
+    color:#ffffff;
+    font-size: 50px;
+    position: absolute;
+    animation-name: showModal;
+    animation-duration:0.5s;
+    animation-fill-mode: both;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:100px;
+    border-radius:10px;
+    user-select: none;
+    margin-top:190px;
+}
+
+.loose h2{
+    font-weight: 400;
+    font-size: 100px;
+    text-align: center;
+    color:white;
+    text-shadow: 0 0 50px white;
+}
+
+.loose button{
+    width:200px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius:10px;
+    border:none;
+    outline: 1px solid #636363;
+    font-size: 26px;
+    color:white;
+    cursor: pointer;
+    transition-duration: 100ms;
+    min-width: 100px;
+    min-height: 40px;
+    font-family: Roboto;
+}
+
+.loose button::first-letter{
+    text-transform: uppercase;
+}
+
+.loose button:hover{
+    background-color: rgba(28, 28, 28, 0.7);
+}
+
+
+.modal{
+    position: absolute;
+}
+
+@keyframes showModal {
+    0%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}

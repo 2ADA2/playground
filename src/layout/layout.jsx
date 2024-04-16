@@ -18,7 +18,7 @@ const icoStyle = {"width": "30px", "height": "30px"}
 
 export const Layout = () => {
     const [nav, setNav] = useState(false)
-    let scrollHeight = Math.max(
+    const scrollHeight = Math.max(
         document.body.scrollHeight, document.documentElement.scrollHeight,
         document.body.offsetHeight, document.documentElement.offsetHeight,
         document.body.clientHeight, document.documentElement.clientHeight
@@ -64,7 +64,7 @@ export const Layout = () => {
                         <Link to={TTFE_ROUTE}>2048</Link>
                         <Link to={THESNAKE_ROUTE}>The snake</Link>
                         <Link to={KEYBOARD_ROUTE}>Keyboard practice</Link>
-                        <Link to={TICTACTOE_ROUTE}>tic tac toe</Link>
+                        <Link to={TICTACTOE_ROUTE}>Tic Tac Toe</Link>
                     </section>
                 </div>
             </div>

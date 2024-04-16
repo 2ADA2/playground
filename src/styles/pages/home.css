@@ -4,6 +4,7 @@
     max-width: 3000px;
     width: 100vw;
     min-height:3100px;
+    margin: auto;
 }
 
 .home-header-container {
@@ -154,7 +155,7 @@
 }
 
 .detailed {
-    animation: show 500ms;
+    animation: header-more-show 500ms;
 }
 
 .home-about button {
@@ -178,7 +179,7 @@ ul {
     animation-duration: 10s;
 }
 
-@keyframes show {
+@keyframes header-more-show {
     0% {
         position: relative;
         bottom: 100px;

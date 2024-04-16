@@ -21,6 +21,7 @@ code {
 html{
   background-color: black;
   overflow-x: hidden;
+  width: 100vw;
 }
 
 #root{
@@ -35,7 +36,6 @@ html{
 main{
   min-width: 100vw;
   justify-content: center;
-  display: flex;
 }
 
 *{

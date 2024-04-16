@@ -3,7 +3,7 @@ import {useState} from "react";
 import {Logo} from "../utils/svg";
 import {Link} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faO, faRodSnake, faStaffSnake, faX} from "@fortawesome/free-solid-svg-icons";
+import {faKeyboard, faO, faRodSnake, faStaffSnake, faX} from "@fortawesome/free-solid-svg-icons";
 import {KEYBOARD_ROUTE, THESNAKE_ROUTE, TICTACTOE_ROUTE, TTFE_ROUTE} from "../utils/consts";
 
 export const Playground = () => {
@@ -18,26 +18,26 @@ export const Playground = () => {
                 </Link>
 
                 <div className="playground-back-container">
-                    <div className={"logo-block"}></div>
-                    <div className={"logo-block"}></div>
-                    <div className={"logo-block"}></div>
-                    <div className={"logo-block"}></div>
-                    <div className={"logo-block"}></div>
-                    <div className={"logo-block"}></div>
-                    <div className={"logo-block"}></div>
-                    <div className={"logo-block"}></div>
-                    <div className={"logo-block"}></div>
-                    <div className={"logo-block"}></div>
-                    <div className={"logo-block"}></div>
-                    <div className={"logo-block"}></div>
-                    <div className={"logo-block"}></div>
-                    <div className={"logo-block"}></div>
-                    <div className={"logo-block"}></div>
-                    <div className={"logo-block"}></div>
-                    <div className={"logo-block"}></div>
-                    <div className={"logo-block"}></div>
-                    <div className={"logo-block"}></div>
-                    <div className={"logo-block"}></div>
+                    <div className={"game-header-block"}></div>
+                    <div className={"game-header-block"}></div>
+                    <div className={"game-header-block"}></div>
+                    <div className={"game-header-block"}></div>
+                    <div className={"game-header-block"}></div>
+                    <div className={"game-header-block"}></div>
+                    <div className={"game-header-block"}></div>
+                    <div className={"game-header-block"}></div>
+                    <div className={"game-header-block"}></div>
+                    <div className={"game-header-block"}></div>
+                    <div className={"game-header-block"}></div>
+                    <div className={"game-header-block"}></div>
+                    <div className={"game-header-block"}></div>
+                    <div className={"game-header-block"}></div>
+                    <div className={"game-header-block"}></div>
+                    <div className={"game-header-block"}></div>
+                    <div className={"game-header-block"}></div>
+                    <div className={"game-header-block"}></div>
+                    <div className={"game-header-block"}></div>
+                    <div className={"game-header-block"}></div>
                 </div>
 
                 <h2>Playground</h2>
@@ -77,7 +77,7 @@ export const Playground = () => {
                         стремясь создать плитку с числом 2048. Простые правила, но глубокая стратегия делают эту игру
                         захватывающей и увлекательной для всех, кто любит вызов умственных способностей.
                     </p>
-                    <Link to={TTFE_ROUTE}><button>Играть</button></Link>
+                    <Link to={TTFE_ROUTE} onClick={() => window.scrollTo(0,0)}><button>Играть</button></Link>
                 </div>
 
                 <div className={(game === 2) ? "game-preview game-preview-opened" : "game-preview"}>
@@ -99,7 +99,7 @@ export const Playground = () => {
                         возможности делают ее идеальной для быстрой и увлекательной игры как для детей, так и для
                         взрослых.
                     </p>
-                    <Link to={TICTACTOE_ROUTE}><button>Играть</button></Link>
+                    <Link to={TICTACTOE_ROUTE} onClick={() => window.scrollTo(0,0)}><button>Играть</button></Link>
                 </div>
 
                 <div className={(game === 3) ? "game-preview game-preview-opened" : "game-preview"}>
@@ -119,7 +119,7 @@ export const Playground = () => {
                         Цель игры - набрать как можно больше очков, управляя змейкой через увеличивающееся пространство.
                         Простые правила и возможность соревноваться за рекорды делают эту игру вечным хитом.
                     </p>
-                    <Link to={THESNAKE_ROUTE}>
+                    <Link to={THESNAKE_ROUTE} onClick={() => window.scrollTo(0,0)}>
                         <button>Играть</button>
                     </Link>
                 </div>
@@ -127,7 +127,7 @@ export const Playground = () => {
                 <div className={(game === 4) ? "game-preview game-preview-opened" : "game-preview"}>
                     <div className="game-preview-header">
                         <div className="card">
-                            <FontAwesomeIcon icon={faO}/><FontAwesomeIcon icon={faX}/>
+                            <FontAwesomeIcon icon={faKeyboard}/>
                         </div>
                         <div className="game-preview-header-container">
                             <h3>Keyboard trainer</h3>
@@ -142,7 +142,7 @@ export const Playground = () => {
                         в минуту (СПМ). После завершения программа выдает статистику, отражающую вашу точность
                         и скорость печати, что помогает отслеживать прогресс и идентифицировать области для улучшения.
                     </p>
-                    <Link to={KEYBOARD_ROUTE}>
+                    <Link to={KEYBOARD_ROUTE} onClick={() => window.scrollTo(0,0)}>
                         <button>Играть</button>
                     </Link>
                 </div>

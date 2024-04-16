@@ -1,0 +1,66 @@
+.tic-tac-toe-game{
+    width: 700px;
+    height: 700px;
+    background: #232323;
+    border-radius: 25px;
+    margin: auto;
+}
+.tic-tac-toe-game table{
+    width: 700px;
+    height: 700px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.tic-tac-toe-game table tr{
+    display: flex;
+    justify-content: space-around;
+}
+.tic-tac-toe-game table td{
+    z-index: 0;
+    width:220px;
+    height: 220px;
+    background: #414141;
+    border-radius: 20px;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.tic-tac-toe-game table td:hover{
+    background: #5b5b5b;
+    cursor: pointer;
+}
+.tic-tac-toe-game table .clicked{
+    background: #4b4b4b;
+    animation: add 200ms both;
+}
+
+@keyframes add {
+    0%{
+        font-size: 1000px;
+        opacity: 0;
+    }
+    100%{
+        font-size: 200px;
+        opacity: 1;
+    }
+}
+
+.end-modal{
+    z-index: 3000;
+    margin: 0 auto;
+    position: absolute;
+    top: 200px; left: 0; bottom: 0; right: 0;
+    width:720px;
+    height:700px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:100px;
+}
