@@ -1,0 +1,30 @@
+.the-snake{
+    width: 700px;
+    height: 700px;
+}
+.snake-field{
+    background: #1a1a1a;
+    width: 700px;
+    height: 700px;
+}
+.snake-field table{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: rgba(45, 59, 45, 0.25);
+}
+.snake-field table tr{
+    display: flex;
+    width: 100%;
+    height: 20%;
+}
+.snake-field table td{
+    width: 5%;
+    height: 100%;
+}
+.snake-field .snake{
+    background-color: rgb(150, 255, 158);
+}
+.snake-field .apple{
+    background-color: red;
+}
