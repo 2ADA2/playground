@@ -3,15 +3,12 @@ export const CreateField = ({snake,apple}) => {
         const row = []
         for (let x = 0; x < 20; x++) {
             for (let i in snake) {
-                let gradient = 200-i*5;
+                let gradient = 200-i;
                 let bg = `rgb(${gradient}, 255, 158)`
-                if(gradient < 1){
-                    bg = `rgb(${gradient}, ${255-i*5}, 158)`
-                }
 
                 if (snake[i][1] === y && snake[i][0] === x) row.push(
                     <td
-                        className={"snake "+ "snake-" + i}
+                        className={"snake snake-" + i}
                         style={{backgroundColor: bg}}
                     ></td>)
             }

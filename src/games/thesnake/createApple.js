@@ -16,5 +16,7 @@ export const createApple = (snake) => {
         }
     }
 
-    return blocks[getRandomInt(0,blocks.length)]
+
+
+    return blocks[getRandomInt(0,blocks.length-1)]
 }

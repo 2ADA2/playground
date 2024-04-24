@@ -5,6 +5,5 @@ export const ABOUT_ROUTE = "/about"
 
 export const TTFE_ROUTE = "/playground/ttfe"
 export const THESNAKE_ROUTE = "/playground/thesnake"
-export const KEYBOARD_ROUTE = "/playground/keyboard"
-export const ARROWCLICK_ROUTE = "/playground/arrowclick"
+export const MINESWEEPER_ROUTE = "/playground/minesweeper"
 export const TICTACTOE_ROUTE = "/playground/tictactoe"

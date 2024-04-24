@@ -2,7 +2,7 @@ import {Home} from "../pages/home";
 import {
     ABOUT_ROUTE,
     HOME_ROUTE,
-    KEYBOARD_ROUTE,
+    MINESWEEPER_ROUTE,
     PLAYGROUND_ROUTE,
     Stats_ROUTE, THESNAKE_ROUTE,
     TICTACTOE_ROUTE,
@@ -13,8 +13,8 @@ import {Stats} from "../pages/stats";
 import {AboutPage} from "../pages/about";
 import {Game2048} from "../games/TTFE/game";
 import {TicTacToe} from "../games/tictactoe/game";
-import {Keyboard} from "../games/keyboard/game";
 import {TheSnake} from "../games/thesnake/game";
+import {Minesweeper} from "../games/Minesweeper/game";
 
 export const routes = [
     {
@@ -43,8 +43,8 @@ export const routes = [
         Element: TicTacToe
     },
     {
-        path:KEYBOARD_ROUTE,
-        Element: Keyboard
+        path:MINESWEEPER_ROUTE,
+        Element: Minesweeper
     },
     {
         path:THESNAKE_ROUTE,

@@ -54,7 +54,6 @@ class Store {
         this.score = this.score + score;
         this.difference = this.score-oldScore;
         localStorage.setItem("score", this.score)
-        console.log(localStorage.getItem("score"))
     }
     cleanDifference(){
         this.difference = 0;

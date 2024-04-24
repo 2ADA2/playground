@@ -2,16 +2,13 @@ import {Link, Outlet} from "react-router-dom";
 import {
     ABOUT_ROUTE,
     HOME_ROUTE,
-    KEYBOARD_ROUTE,
-    PLAYGROUND_ROUTE,
     Stats_ROUTE,
-    THESNAKE_ROUTE, TICTACTOE_ROUTE,
-    TTFE_ROUTE
 } from "../utils/consts";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub, faInstagram, faSkype, faTelegram} from "@fortawesome/free-brands-svg-icons";
 import {useState} from "react";
 import {Logo} from "../utils/svg";
+import {Menu} from "../components/menu";
 import("../styles/layout/layout.css")
 
 const icoStyle = {"width": "30px", "height": "30px"}
@@ -38,36 +35,7 @@ export const Layout = () => {
                 </nav>
 
             </header>
-            <div
-                style={{height : scrollHeight - 75 + "px"}}
-                className={(nav) ? "playground-search-container" : "playground-search-container playground-search-container-hide"}
-                onClick={() => setNav(false)}
-            >
-                <div className={(nav) ? "playground-search" : "playground-search playground-search-hide"}>
-                    <section className="beauty">
-                        <Link to={TTFE_ROUTE}>
-                            <h3>2048</h3>
-                            <p>
-                                До сих пор очень популярная игра, соберите число 2048! Это не так легко.
-                            </p>
-                        </Link>
-                        <Link to={KEYBOARD_ROUTE}>
-                            <h3>Keyboard</h3>
-                            <p>
-                                Проверьте свою скорость печати, иногда даже просто печатать на скорость может быть
-                                интересным.
-                            </p>
-                        </Link>
-                    </section>
-                    <section className="search-links">
-                        <Link to={PLAYGROUND_ROUTE}>Playground</Link>
-                        <Link to={TTFE_ROUTE}>2048</Link>
-                        <Link to={THESNAKE_ROUTE}>The snake</Link>
-                        <Link to={KEYBOARD_ROUTE}>Keyboard practice</Link>
-                        <Link to={TICTACTOE_ROUTE}>Tic Tac Toe</Link>
-                    </section>
-                </div>
-            </div>
+            <Menu nav = {nav} setNav={(val) => setNav(val)} scrollHeight={scrollHeight}/>
             <main>
                 <Outlet/>
             </main>

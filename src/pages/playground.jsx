@@ -4,7 +4,7 @@ import {Logo} from "../utils/svg";
 import {Link} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faKeyboard, faO, faRodSnake, faStaffSnake, faX} from "@fortawesome/free-solid-svg-icons";
-import {KEYBOARD_ROUTE, THESNAKE_ROUTE, TICTACTOE_ROUTE, TTFE_ROUTE} from "../utils/consts";
+import {MINESWEEPER_ROUTE, THESNAKE_ROUTE, TICTACTOE_ROUTE, TTFE_ROUTE} from "../utils/consts";
 
 export const Playground = () => {
 
@@ -142,7 +142,7 @@ export const Playground = () => {
                         в минуту (СПМ). После завершения программа выдает статистику, отражающую вашу точность
                         и скорость печати, что помогает отслеживать прогресс и идентифицировать области для улучшения.
                     </p>
-                    <Link to={KEYBOARD_ROUTE} onClick={() => window.scrollTo(0,0)}>
+                    <Link to={MINESWEEPER_ROUTE} onClick={() => window.scrollTo(0,0)}>
                         <button>Играть</button>
                     </Link>
                 </div>
