@@ -9,6 +9,17 @@
     cursor: pointer;
     user-select: none;
 }
-.mine-field td:hover{
+.mine-field .opened{
+    background-color: rgb(31, 31, 31);
+    cursor: default;
+}
+.mine-field .detected{
+    cursor: default;
+    background-color: #414141;
+}
+.mine-field .detected path{
+    color: #ff4f4f;
+}
+.mine-field .closed:hover{
     background-color: #707070;
 }
