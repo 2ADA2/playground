@@ -244,9 +244,9 @@
         rotate: -130deg;
     }
     100%{
-        top:-50px;
+        top:-150px;
         opacity: 1;
-        left:80vw;
+        left:85vw;
         rotate: -120deg;
     }
 }

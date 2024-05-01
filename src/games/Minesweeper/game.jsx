@@ -1,17 +1,24 @@
 import {isArraysEqual} from "../../functions/checkArrays";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faBomb, faClock, faFlag, faSearch, faTimes} from "@fortawesome/free-solid-svg-icons";
+import {faBomb, faClock, faFlag, faGamepad, faSearch, faSmile} from "@fortawesome/free-solid-svg-icons";
 import {generateField} from "./generateField";
 import {createMines} from "./createMines";
 import mineStore from "./mineStore";
 import {observer} from "mobx-react-lite";
 import clearEmpty from "./clearEmpty";
 import {BlockLink} from "../../components/link";
-import {faGithub, faYoutube} from "@fortawesome/free-brands-svg-icons";
+import {faWikipediaW, faYoutube} from "@fortawesome/free-brands-svg-icons";
+
+import("./styles/mineAnimation.css")
 
 export const Minesweeper = observer(() => {
+    const scrollHeight = Math.max(
+        document.body.scrollHeight, document.documentElement.scrollHeight,
+        document.body.offsetHeight, document.documentElement.offsetHeight,
+        document.body.clientHeight, document.documentElement.clientHeight
+    );
     const handleClick = (block) => {
-        if(mineStore.end) return;
+        if (mineStore.end || mineStore.win) return;
         const [x, y, val] = block
         if (!mineStore.start) {
             mineStore.updateField(generateField(createMines([x, y])))
@@ -34,7 +41,7 @@ export const Minesweeper = observer(() => {
     }
 
     const addFlag = (e, block) => {
-        if(mineStore.end || !mineStore.start) return;
+        if (mineStore.end || !mineStore.start || mineStore.win) return;
         e.preventDefault()
         const [x, y, val] = block
         let flags = mineStore.detected.slice()
@@ -50,6 +57,7 @@ export const Minesweeper = observer(() => {
     }
 
     const removeFlag = (e, block) => {
+        if (mineStore.win || mineStore.end) return;
         e.preventDefault()
         const [x, y, val] = block
         let flags = mineStore.detected.slice()
@@ -106,17 +114,76 @@ export const Minesweeper = observer(() => {
     }
     return (
         <>
-            <section className={"mine-header"}>
+            <section className={"mine-header-container"}>
+                <div className={"mine-header-anim-container"} style={{height: scrollHeight}}>
+                    <div className={"mine-header-anim"}></div>
+                    <div className={"mine-header-anim"}></div>
+                    <div className={"mine-header-anim"}></div>
+                    <div className={"mine-header-anim"}></div>
+                    <div className={"mine-header-anim"}></div>
+                    <div className={"mine-header-anim"}></div>
+                    <div className={"mine-header-anim"}></div>
+                    <div className={"mine-header-anim"}></div>
+                    <div className={"mine-header-anim"}></div>
+                    <div className={"mine-header-anim"}></div>
+                    <div className={"mine-header-anim"}></div>
+                    <div className={"mine-header-anim"}><FontAwesomeIcon icon={faFlag}/></div>
+                    <div className={"mine-header-anim"}><FontAwesomeIcon icon={faBomb}/></div>
+                    <div className={"mine-header-anim"}><FontAwesomeIcon icon={faSearch}/></div>
+                    <div className={"mine-header-anim"}><FontAwesomeIcon icon={faFlag}/></div>
+                </div>
 
+                <div className={"mine-logo"}><FontAwesomeIcon icon={faBomb}/></div>
+                <section className={"mine-header"}>
+                    <h2>Minesweeper</h2>
+                    <span style={{fontWeight: "100"}}>сапёр</span>
+                </section>
             </section>
+
             <section className={"mine-links"}>
-                <BlockLink
-                    elem = {<FontAwesomeIcon icon={faYoutube}/>}
-                    header={"Как играть"}
-                    text={"посмотрите обучающий ролик"}
-                />
-
+                <div>
+                    <BlockLink
+                        link={"https://www.youtube.com/watch?v=tDwTRwjRMYE"}
+                        elem={<FontAwesomeIcon icon={faYoutube}/>}
+                        header={"Как играть"}
+                        text={"посмотрите обучающий ролик"}
+                    />
+                    <BlockLink
+                        link={"https://minesweeper.online/"}
+                        elem={<FontAwesomeIcon icon={faGamepad}/>}
+                        header={"Другой сайт"}
+                        text={"В интернете есть еще много сайтов с играми"}
+                    />
+                    <BlockLink
+                        link={"https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BF%D1%91%D1%80_(%D0%B8%D0%B3%D1%80%D0%B0)"}
+                        elem={<FontAwesomeIcon icon={faWikipediaW}/>}
+                        header={"Подробнее"}
+                        text={"Узнайте подробнее на Wiki"}
+                    />
+                </div>
+                <section className={"mine-rules"}>
+                    <h3>Правила</h3>
+                    <p>У вас есть поле 15 на 20, вам нужно "раскопать" все ячейки в которых нет бомбы</p>
+                    <ul>
+                        <li><FontAwesomeIcon icon={faSearch}/> Вам нужно раскопать 260 ячеек не попадясь на бомбу. До
+                            старости доживает не тот сапер, который чувствует, где мины, а тот, кто их ставит :)
+                        </li>
+                        <li><FontAwesomeIcon icon={faFlag}/> Вы можете поставить указатель на ПКМ или снять его. Не
+                            промахнитесь, сапер ошибается лишь однажды :)
+                        </li>
+                        <li><FontAwesomeIcon icon={faClock}/> Когда вы разберётесь, попробуйте зачистить поле как можно
+                            быстрее. Одна нога здесь другая там :)
+                        </li>
+                        <li><FontAwesomeIcon icon={faBomb}/> Если попадётесь на бомбу, игра закончится. Сапёра от
+                            дисантника отличает лишь направление полета :)
+                        </li>
+                        <li><FontAwesomeIcon icon={faSmile}/>"Ноги моей здесь больше не будет" - сказал сапер наступая
+                            на мину :)
+                        </li>
+                    </ul>
+                </section>
             </section>
+
             <section className={"mine-info-panel"}>
                 <div>
                     <span><FontAwesomeIcon icon={faSearch}/></span>
@@ -130,6 +197,9 @@ export const Minesweeper = observer(() => {
                     <span><FontAwesomeIcon icon={faClock}/></span>
                     <span>{mineStore.timer + "c"}</span>
                 </div>
+                <div>
+                    <button onClick={() => mineStore.restart()}>restart</button>
+                </div>
             </section>
 
             <section className={"mine-loose"} style={{display: (mineStore.end) ? "block" : "none"}}>
@@ -140,12 +210,10 @@ export const Minesweeper = observer(() => {
                 <h3>Вы выиграли!</h3>
                 <button onClick={() => mineStore.restart()}>Заново</button>
             </section>
+
             <table className={"mine-field"} onContextMenu={(e) => e.preventDefault()}>
                 {newField}
             </table>
-            <section className={"mine-rules"}>
-
-            </section>
         </>
 
 

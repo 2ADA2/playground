@@ -1,0 +1,400 @@
+@keyframes mine-logo-show {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+        position: relative;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        position: relative;
+    }
+}
+
+.mine-header-anim-container {
+    top: 0;
+    position: absolute;
+    height: 1500px;
+    width: 100%;
+    z-index: -1;
+}
+.mine-header-anim {
+    position: absolute;
+    background: linear-gradient(to bottom right, #000, #000, #4fc734, #56cbb9);
+    z-index: 100;
+    animation: mine1 0.5s both;
+}
+
+.mine-header-anim:nth-child(2) {
+    z-index: 99;
+    animation: mine2 0.5s both;
+}
+
+.mine-header-anim:nth-child(3) {
+    z-index: 98;
+    animation: mine3 0.5s both;
+}
+
+.mine-header-anim:nth-child(4) {
+    z-index: 97;
+    animation: mine4 0.5s both;
+}
+
+.mine-header-anim:nth-child(5) {
+    z-index: 96;
+    animation: mine5 0.5s both;
+}
+
+.mine-header-anim:nth-child(6) {
+    z-index: 95;
+    animation: mine6 0.5s both;
+}
+
+.mine-header-anim:nth-child(7) {
+    z-index: 94;
+    animation: mine7 0.5s both;
+}
+
+.mine-header-anim:nth-child(8) {
+    z-index: 93;
+    animation: mine8 0.5s both;
+}
+
+.mine-header-anim:nth-child(9) {
+    z-index: 92;
+    animation: mine9 0.5s both;
+}
+
+.mine-header-anim:nth-child(10) {
+    z-index: 91;
+    animation: mine10 0.5s both;
+}
+
+.mine-header-anim:nth-child(11) {
+    z-index: 90;
+    animation: mine11 0.5s both;
+}
+
+.mine-header-anim svg{
+    width: 100%;
+    height: 100%;
+}
+
+.mine-header-anim:nth-child(12) {
+    z-index: 100;
+    animation: mine12 0.7s both;
+    background: none;
+}
+
+.mine-header-anim:nth-child(13) {
+    z-index: 100;
+    animation: mine13 0.7s both;
+    background: none;
+}
+
+.mine-header-anim:nth-child(14) {
+    z-index: 100;
+    animation: mine14 0.7s both;
+    background: none;
+}
+
+.mine-header-anim:nth-child(15) {
+    z-index: 100;
+    animation: mine15 0.7s both;
+    background: none;
+}
+
+@keyframes mine1 {
+    0% {
+        opacity: 0;
+        left: -10vw;
+        top: -10vw;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 1vw;
+    }
+    100% {
+        opacity: 1;
+        width: 10vw;
+        height: 10vw;
+        left: -5vw;
+        top: -5vw;
+        border-radius: 2vw;
+    }
+}
+
+@keyframes mine2 {
+    0% {
+        opacity: 0;
+        left: -10vw;
+        top: -10vw;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 1vw;
+    }
+    100% {
+        rotate: -5deg;
+        opacity: 1;
+        width: 11vw;
+        height: 11vw;
+        left: -1vw;
+        top: -1vw;
+        border-radius: 2.5vw;
+    }
+}
+
+@keyframes mine3 {
+    0% {
+        opacity: 0;
+        left: -10vw;
+        top: -10vw;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 1vw;
+    }
+    100% {
+        rotate: -10deg;
+        opacity: 1;
+        width: 13vw;
+        height: 13vw;
+        left: 2vw;
+        top: 0;
+        border-radius: 3vw;
+    }
+}
+
+@keyframes mine4 {
+    0% {
+        opacity: 0;
+        left: -10vw;
+        top: -10vw;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 1vw;
+    }
+    100% {
+        rotate: -15deg;
+        opacity: 1;
+        width: 15vw;
+        height: 15vw;
+        left: 6vw;
+        top: 2vw;
+        border-radius: 3vw;
+    }
+}
+
+@keyframes mine5 {
+    0% {
+        opacity: 0;
+        left: -10vw;
+        top: -10vw;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 1vw;
+    }
+    100% {
+        rotate: -20deg;
+        opacity: 1;
+        width: 18vw;
+        height: 18vw;
+        left: 12vw;
+        top: 3vw;
+        border-radius: 3.4vw;
+    }
+}
+
+@keyframes mine6 {
+    0% {
+        opacity: 0;
+        left: -10vw;
+        top: -10vw;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 1vw;
+    }
+    100% {
+        rotate: -25deg;
+        opacity: 1;
+        width: 20vw;
+        height: 20vw;
+        left: 18vw;
+        top: 3.5vw;
+        border-radius: 4vw;
+    }
+}
+
+@keyframes mine7 {
+    0% {
+        opacity: 0;
+        left: -10vw;
+        top: -10vw;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 1vw;
+    }
+    100% {
+        rotate: -30deg;
+        opacity: 1;
+        width: 23vw;
+        height: 23vw;
+        left: 25vw;
+        top: 3vw;
+        border-radius: 4.6vw;
+    }
+}
+
+@keyframes mine8 {
+    0% {
+        opacity: 0;
+        left: -10vw;
+        top: -10vw;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 1vw;
+    }
+    100% {
+        rotate: -37deg;
+        opacity: 1;
+        width: 26vw;
+        height: 26vw;
+        left: 33vw;
+        top: 2vw;
+        border-radius: 5.2vw;
+    }
+}
+
+@keyframes mine9 {
+    0% {
+        opacity: 0;
+        left: -10vw;
+        top: -10vw;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 1vw;
+    }
+    100% {
+        rotate: -45deg;
+        opacity: 1;
+        width: 30vw;
+        height: 30vw;
+        left: 40vw;
+        top: 0;
+        border-radius: 6vw;
+    }
+}
+
+@keyframes mine10 {
+    0% {
+        opacity: 0;
+        left: -10vw;
+        top: -10vw;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 1vw;
+    }
+    100% {
+        rotate: -55deg;
+        opacity: 1;
+        width: 35vw;
+        height: 35vw;
+        left: 53vw;
+        top: -4vw;
+        border-radius: 6.3vw;
+    }
+}
+
+@keyframes mine11 {
+    0% {
+        opacity: 0;
+        left: -10vw;
+        top: -10vw;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 1vw;
+    }
+    100% {
+        rotate: -65deg;
+        opacity: 1;
+        width: 42vw;
+        height: 42vw;
+        left: 65vw;
+        top: -10vw;
+        border-radius: 8vw;
+    }
+}
+
+@keyframes mine12 {
+    0% {
+        opacity: 0;
+        left: -10vw;
+        top: -10vw;
+        width: 3vw;
+        height: 3vw;
+        rotate: 80deg;
+    }
+    100% {
+        rotate: 40deg;
+        opacity: 0.6;
+        width: 3vw;
+        height: 3vw;
+        left: 20vw;
+        top: 14vw;
+    }
+}
+
+@keyframes mine13 {
+    0% {
+        opacity: 0;
+        left: -10vw;
+        top: -10vw;
+        width: 3vw;
+        height: 3vw;
+        rotate: 80deg;
+    }
+    100% {
+        rotate: 0deg;
+        opacity: 0.6;
+        width: 3vw;
+        height: 3vw;
+        left: 50vw;
+        top: 27vw;
+    }
+}
+
+@keyframes mine14 {
+    0% {
+        opacity: 0;
+        left: -10vw;
+        top: -10vw;
+        width: 3vw;
+        height: 3vw;
+        rotate: 80deg;
+    }
+    100% {
+        rotate: -80deg;
+        opacity: 0.6;
+        width: 3vw;
+        height: 3vw;
+        left: 60vw;
+        top: 10vw;
+    }
+}
+
+@keyframes mine15 {
+    0% {
+        opacity: 0;
+        left: -10vw;
+        top: -10vw;
+        width: 3vw;
+        height: 3vw;
+        rotate: 80deg;
+    }
+    100% {
+        rotate: -10deg;
+        opacity: 0.6;
+        width: 3vw;
+        height: 3vw;
+        left: 80vw;
+        top: 20vw;
+    }
+}

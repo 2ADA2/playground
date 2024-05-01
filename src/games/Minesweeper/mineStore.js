@@ -1,6 +1,7 @@
 import {makeAutoObservable} from "mobx";
 import {generateField} from "./generateField";
 import {isArraysEqual} from "../../functions/checkArrays";
+import {clear} from "@testing-library/user-event/dist/clear";
 
 class MineStore {
     end = false;
@@ -31,6 +32,7 @@ class MineStore {
 
     setWin(win) {
         this.win = win
+        clearInterval(this.interval)
     }
 
     setStart(start) {
@@ -64,6 +66,7 @@ class MineStore {
 
     restart(){
         this.end = false;
+        clearInterval(this.interval)
         this.start = false;
         this.win = false;
         this.field = generateField([])

@@ -1,5 +1,5 @@
 import {isArraysEqual} from "../../functions/checkArrays";
-import "./mines.css"
+import "./styles/mines.css"
 import {checkMines} from "./checkMines";
 
 export const generateField = (mines) => {

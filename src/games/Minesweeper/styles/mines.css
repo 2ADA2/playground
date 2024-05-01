@@ -1,0 +1,120 @@
+.mine-header-container {
+    height: 400px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-width: 500px;
+    justify-content: center;
+}
+
+.mine-header-container .mine-logo svg {
+    height: 5vw;
+    min-height: 40px;
+    max-height: 130px;
+    padding: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.65);
+    border-radius: 20px;
+    margin-right: 10px;
+
+}
+
+.mine-header {
+    width: 50%;
+    animation: mine-logo-show 0.5s 0.1s both;
+    opacity: 0;
+}
+
+.mine-logo {
+    animation: mine-logo-show 0.5s;
+}
+
+
+.mine-header-container h2, .mine-header-container span {
+    display: block;
+    font-weight: 400;
+    font-size: clamp(36px, 4vw, 100px);
+}
+
+.mine-header-container span {
+    font-size: clamp(24px, 2vw, 64px);
+}
+
+.mine-field td {
+    background-color: #5e5e5e;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.mine-field .opened {
+    background-color: rgb(31, 31, 31);
+    cursor: default;
+}
+
+.mine-field .detected {
+    cursor: default;
+    background-color: #414141;
+}
+
+.mine-field .detected path {
+    color: #ff4f4f;
+}
+
+.mine-field .closed:hover {
+    background-color: #707070;
+}
+
+.mine-links {
+    margin: auto;
+    width: 90%;
+    max-width: 2000px;
+    min-width: 700px;
+    display: flex;
+    gap:40px;
+}
+.mine-links div{
+    width: 40%;
+}
+.mine-links div a {
+    width: 600px;
+    margin: 5px 0;
+}
+
+.mine-rules{
+    background: rgba(0, 0, 0, 0.75);
+    width: 60%;
+    border-radius: 10px;
+    padding: 30px;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.mine-rules h3{
+    font-weight: 400;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    border-left: 2px solid white;
+    font-size: 28px;
+}
+.mine-rules p{
+    margin-bottom: 10px;
+}
+.mine-rules ul{
+    margin-left: 20px;
+}
+.mine-rules li{
+    margin: 5px 0;
+    font-size: 20px;
+    list-style: none;
+}
+.mine-rules li svg{
+    margin-right: 10px;
+}
+
+.mine-info-panel{
+    margin-top: 80px;
+    width: calc(20 * 45px);
+}
