@@ -8,7 +8,7 @@ import { spawn } from "./comopnents/finctions/spawn";
 import { LoseModal } from "./comopnents/layouts/loseModal";
 import { ControlPanel } from "./comopnents/layouts/controlPanel";
 import { prohibitScroll } from "./comopnents/finctions/prohibitScroll";
-import { BlockLink } from "./comopnents/elements/link";
+import { BlockLink } from "../../components/link";
 import { checkMoves } from "./comopnents/finctions/checkMoves";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faReact} from "@fortawesome/free-brands-svg-icons";

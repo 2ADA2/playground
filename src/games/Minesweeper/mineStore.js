@@ -1,5 +1,6 @@
 import {makeAutoObservable} from "mobx";
 import {generateField} from "./generateField";
+import {isArraysEqual} from "../../functions/checkArrays";
 
 class MineStore {
     end = false;
@@ -9,6 +10,9 @@ class MineStore {
     field = generateField([])
     detected = []
     opened = []
+
+    timer = 0
+    interval = null
 
     constructor() {
         makeAutoObservable(this)
@@ -20,6 +24,9 @@ class MineStore {
 
     setEnd(end) {
         this.end = end;
+        if(this.end){
+            clearInterval(this.interval);
+        }
     }
 
     setWin(win) {
@@ -28,6 +35,11 @@ class MineStore {
 
     setStart(start) {
         this.start = start;
+        if(start){
+            this.interval = setInterval(() => {
+                this.timer += 1
+            }, 1000)
+        }
     }
 
     setDetected(detected) {
@@ -35,7 +47,19 @@ class MineStore {
     }
 
     setOpened(opened) {
-        this.opened = opened
+        let newOpened = []
+        checkOpen: for(let block of opened){
+            for(let open of newOpened){
+                if(isArraysEqual(block, open)) continue checkOpen
+            }
+            newOpened.push(block)
+        }
+
+        this.opened = newOpened
+
+        if ((this.opened.length === 15*20 - 40) && !this.end) {
+            this.setWin(true)
+        }
     }
 
     restart(){
@@ -45,6 +69,7 @@ class MineStore {
         this.field = generateField([])
         this.detected = []
         this.opened = []
+        this.timer = 0
     }
 }
 

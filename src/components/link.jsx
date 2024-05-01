@@ -1,4 +1,4 @@
-import "../../styles/link.css"
+import "../games/TTFE/styles/link.css"
 export const BlockLink = ({elem = "", link="", url="", header="header", text="text"}) => {
     if(elem) return(
         <a href={link} className="link-contianer" target="_blank">

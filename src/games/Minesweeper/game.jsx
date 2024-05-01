@@ -1,14 +1,17 @@
 import {isArraysEqual} from "../../functions/checkArrays";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faBomb, faFlag} from "@fortawesome/free-solid-svg-icons";
+import {faBomb, faClock, faFlag, faSearch, faTimes} from "@fortawesome/free-solid-svg-icons";
 import {generateField} from "./generateField";
 import {createMines} from "./createMines";
 import mineStore from "./mineStore";
 import {observer} from "mobx-react-lite";
 import clearEmpty from "./clearEmpty";
+import {BlockLink} from "../../components/link";
+import {faGithub, faYoutube} from "@fortawesome/free-brands-svg-icons";
 
 export const Minesweeper = observer(() => {
     const handleClick = (block) => {
+        if(mineStore.end) return;
         const [x, y, val] = block
         if (!mineStore.start) {
             mineStore.updateField(generateField(createMines([x, y])))
@@ -23,16 +26,15 @@ export const Minesweeper = observer(() => {
         if (val === 0) mineStore.setOpened(clearEmpty(mineStore.field, x, y, mineStore.opened))
         let newOpened = mineStore.opened.slice()
         newOpened.push([x, y])
-
+        console.log(mineStore.opened.length)
         if (val === "m" && !mineStore.win) {
             mineStore.setEnd(true)
-        } else if ((mineStore.opened.length === 15 * 20 - 40) && mineStore.end) {
-            mineStore.setWin(true)
         }
         mineStore.setOpened(newOpened)
     }
 
     const addFlag = (e, block) => {
+        if(mineStore.end || !mineStore.start) return;
         e.preventDefault()
         const [x, y, val] = block
         let flags = mineStore.detected.slice()
@@ -104,6 +106,32 @@ export const Minesweeper = observer(() => {
     }
     return (
         <>
+            <section className={"mine-header"}>
+
+            </section>
+            <section className={"mine-links"}>
+                <BlockLink
+                    elem = {<FontAwesomeIcon icon={faYoutube}/>}
+                    header={"Как играть"}
+                    text={"посмотрите обучающий ролик"}
+                />
+
+            </section>
+            <section className={"mine-info-panel"}>
+                <div>
+                    <span><FontAwesomeIcon icon={faSearch}/></span>
+                    <span>{mineStore.opened.length + "/" + 260}</span>
+                </div>
+                <div>
+                    <span><FontAwesomeIcon icon={faFlag}/></span>
+                    <span>{40 - mineStore.detected.length}</span>
+                </div>
+                <div>
+                    <span><FontAwesomeIcon icon={faClock}/></span>
+                    <span>{mineStore.timer + "c"}</span>
+                </div>
+            </section>
+
             <section className={"mine-loose"} style={{display: (mineStore.end) ? "block" : "none"}}>
                 <h3>Вы проиграли!</h3>
                 <button onClick={() => mineStore.restart()}>Заново</button>
@@ -115,7 +143,11 @@ export const Minesweeper = observer(() => {
             <table className={"mine-field"} onContextMenu={(e) => e.preventDefault()}>
                 {newField}
             </table>
+            <section className={"mine-rules"}>
+
+            </section>
         </>
+
 
     )
 })
