@@ -12,11 +12,6 @@ import {faWikipediaW, faYoutube} from "@fortawesome/free-brands-svg-icons";
 import("./styles/mineAnimation.css")
 
 export const Minesweeper = observer(() => {
-    const scrollHeight = Math.max(
-        document.body.scrollHeight, document.documentElement.scrollHeight,
-        document.body.offsetHeight, document.documentElement.offsetHeight,
-        document.body.clientHeight, document.documentElement.clientHeight
-    );
     const handleClick = (block) => {
         if (mineStore.end || mineStore.win) return;
         const [x, y, val] = block
@@ -115,7 +110,7 @@ export const Minesweeper = observer(() => {
     return (
         <>
             <section className={"mine-header-container"}>
-                <div className={"mine-header-anim-container"} style={{height: scrollHeight}}>
+                <div className={"mine-header-anim-container"} style={{height: "2040px"}}>
                     <div className={"mine-header-anim"}></div>
                     <div className={"mine-header-anim"}></div>
                     <div className={"mine-header-anim"}></div>
@@ -185,35 +180,52 @@ export const Minesweeper = observer(() => {
             </section>
 
             <section className={"mine-info-panel"}>
-                <div>
-                    <span><FontAwesomeIcon icon={faSearch}/></span>
-                    <span>{mineStore.opened.length + "/" + 260}</span>
-                </div>
-                <div>
-                    <span><FontAwesomeIcon icon={faFlag}/></span>
-                    <span>{40 - mineStore.detected.length}</span>
-                </div>
-                <div>
-                    <span><FontAwesomeIcon icon={faClock}/></span>
-                    <span>{mineStore.timer + "c"}</span>
+                <div className={"panel-attributes"}>
+                    <div>
+                        <span><FontAwesomeIcon icon={faSearch}/></span>
+                        <span>{mineStore.opened.length + "/" + 260}</span>
+                    </div>
+                    <div>
+                        <span><FontAwesomeIcon icon={faFlag}/></span>
+                        <span>{40 - mineStore.detected.length}</span>
+                    </div>
+                    <div>
+                        <span><FontAwesomeIcon icon={faClock}/></span>
+                        <span>{mineStore.timer + "c"}</span>
+                    </div>
                 </div>
                 <div>
                     <button onClick={() => mineStore.restart()}>restart</button>
                 </div>
             </section>
+            {
+                (mineStore.end) ?
+                    <section className={"mine-loose"}>
+                        <h3>Вы проиграли!</h3>
+                        <button onClick={() => mineStore.restart()}>Заново</button>
+                    </section> :  (mineStore.win) ?
+                    <section className={"mine-loose"}>
+                        <h3>Вы выиграли!</h3>
+                        <button onClick={() => mineStore.restart()}>Заново</button>
+                    </section>:<></>
+            }
 
-            <section className={"mine-loose"} style={{display: (mineStore.end) ? "block" : "none"}}>
-                <h3>Вы проиграли!</h3>
-                <button onClick={() => mineStore.restart()}>Заново</button>
-            </section>
-            <section className={"mine-loose"} style={{display: (mineStore.win) ? "block" : "none"}}>
-                <h3>Вы выиграли!</h3>
-                <button onClick={() => mineStore.restart()}>Заново</button>
-            </section>
 
             <table className={"mine-field"} onContextMenu={(e) => e.preventDefault()}>
                 {newField}
             </table>
+
+            <section className={"mine-rules"} style={{margin:"auto", marginBottom:"40px", minWidth:"500px"}}>
+                <h3>Как играть</h3>
+                <p>
+                    В сапере очень простые правила.
+                    Игровое поле разделено на клетки, некоторые из которых заминированы.
+                    Для победы вам нужно открыть все клетки, не попадая на мины.
+                    В открытых клетках отображаются цифры, каждая цифра — это количество мин в соседних клетках.
+                    С помощью этой информации можно определить в каких клетках содержатся мины.
+                    Предполагаемую клетку с миной можно пометить флажком с помощью правой кнопки мыши.
+                </p>
+            </section>
         </>
 
 

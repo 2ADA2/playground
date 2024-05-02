@@ -3,7 +3,7 @@ import {useState} from "react";
 import {Logo} from "../utils/svg";
 import {Link} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faKeyboard, faO, faRodSnake, faStaffSnake, faX} from "@fortawesome/free-solid-svg-icons";
+import {faBomb, faKeyboard, faO, faRodSnake, faStaffSnake, faX} from "@fortawesome/free-solid-svg-icons";
 import {MINESWEEPER_ROUTE, THESNAKE_ROUTE, TICTACTOE_ROUTE, TTFE_ROUTE} from "../utils/consts";
 
 export const Playground = () => {
@@ -55,7 +55,7 @@ export const Playground = () => {
                     The snake
                 </button>
                 <button onClick={() => setGame(4)} className={(game === 4) ? "active" : ""}>
-                    Keyboard trainer
+                    Minesweeper
                 </button>
             </section>
 
@@ -127,20 +127,24 @@ export const Playground = () => {
                 <div className={(game === 4) ? "game-preview game-preview-opened" : "game-preview"}>
                     <div className="game-preview-header">
                         <div className="card">
-                            <FontAwesomeIcon icon={faKeyboard}/>
+                            <FontAwesomeIcon icon={faBomb}/>
                         </div>
                         <div className="game-preview-header-container">
-                            <h3>Keyboard trainer</h3>
-                            <span>Давайте посоревнуемся в скорости печати)</span>
+                            <h3>Minesweeper</h3>
+                            <span>Знаменитый сапер от Windows</span>
                         </div>
                     </div>
 
                     <p>
-                        Удобный инструмент для оценки и улучшения вашей скорости набора текста. предоставляет различные
-                        упражнения и тесты, позволяющие определить вашу скорость печати в знаках в минуту (ЗПМ) или
-                        словах
-                        в минуту (СПМ). После завершения программа выдает статистику, отражающую вашу точность
-                        и скорость печати, что помогает отслеживать прогресс и идентифицировать области для улучшения.
+                        Плоское или объёмное игровое поле разделено на смежные ячейки,
+                        некоторые из которых «заминированы»; количество «заминированных» ячеек неизвестно.
+                        Целью игры является открытие всех ячеек, не содержащих мины.
+                        При некоторых расстановках мин вычислить их расположение невозможно,
+                        и игрок оказывается перед необходимостью открывать ячейки наугад.
+                        Сапёр для Windows имеет интерактивное поле, если все возможные комбинации
+                        на поле уже открыты, то игрок НЕ взорвется, ткнув наугад. Некоторые реализации
+                        (например, «Mines» в наборе головоломок VS games) не создают расположений, требующих угадывания.
+                        <p>В данной версии игры есть вероятность того, что игроку придётся угадывать</p>
                     </p>
                     <Link to={MINESWEEPER_ROUTE} onClick={() => window.scrollTo(0,0)}>
                         <button>Играть</button>
