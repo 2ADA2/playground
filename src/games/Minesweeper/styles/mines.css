@@ -46,27 +46,28 @@
 }
 
 .mine-field td {
-    background-color: rgba(117, 117, 117, 0.95);
+    background-color: rgba(255, 255, 255, 0.5);
     width: 45px;
     height: 45px;
     text-align: center;
     cursor: pointer;
     user-select: none;
     border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .mine-field .opened {
-    background-color: rgba(51, 51, 51, 0.7);
+    background-color: rgba(51, 51, 51, 0);
     cursor: default;
 }
 
 .mine-field .bomb {
-    background-color: rgb(150, 38, 38);
+    background-color: rgba(255, 112, 112, 0.6);
 }
 
 .mine-field .detected {
     cursor: default;
-    background-color: rgba(82, 82, 82, 0.9);
+    background-color: rgba(114, 114, 114, 0.8);
 }
 
 .mine-field .detected path {
@@ -74,7 +75,7 @@
 }
 
 .mine-field .closed:hover {
-    background-color: rgba(117, 117, 117, 0.8);
+    background-color: rgba(203, 203, 203, 0.5);
 }
 
 .mine-links {

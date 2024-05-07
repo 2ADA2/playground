@@ -6,12 +6,16 @@ import snakeStore from "./snakeStore";
 import {observer} from "mobx-react-lite";
 import {createApple} from "./createApple";
 import {isArraysEqual} from "../../functions/checkArrays";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faApple} from "@fortawesome/free-brands-svg-icons";
+import {faStar} from "@fortawesome/free-solid-svg-icons";
+import {BlockLink} from "../../components/link";
 
 export const TheSnake = observer(() => {
     const [start, setStart] = useState(snakeStore.start)
 
     const handleKeyDown = (e) => {
-        if(!snakeStore.start) return
+        if (!snakeStore.start) return
         const codes = ["ArrowUp", "ArrowRight", "ArrowDown", "ArrowLeft"];
         const index = codes.indexOf(e.code);
         if (index + 1) {
@@ -25,8 +29,8 @@ export const TheSnake = observer(() => {
         snakeStore.setEnd(true)
         snakeStore.setStart(false)
         snakeStore.setWay(1)
-        snakeStore.setSnake([[5,10],[6,10]])
-        snakeStore.setApple(createApple([[5,10],[6,10]]))
+        snakeStore.setSnake([[5, 10], [6, 10]])
+        snakeStore.setApple(createApple([[5, 10], [6, 10]]))
     }
 
     const checkEnd = (snake) => {
@@ -104,17 +108,48 @@ export const TheSnake = observer(() => {
         };
     }, []);
 
-    return (<div className="the-snake">
-        <section className={"snake-field"}>
-            <CreateField snake={snakeStore.snake} apple={snakeStore.apple}/>
-        </section>
-        {snakeStore.end ? <section onClick={() => setStart(true)}>
-                <button>restart</button>
-            </section>
-            : (snakeStore.start) ? <></> : <section onClick={() => setStart(true)}>
-                <button>start</button>
-            </section>
-        }
+    return (
+        <div className="the-snake">
+            <section className={"snake-header-container"}>
+                <section className={"snake-header-background"}>
 
-    </div>)
+                </section>
+                <div className={"snake-header"}>
+                    <h2>The snake</h2>
+                    <span>Змейка</span>
+                </div>
+            </section>
+            <section className={"snake-links"}>
+                <BlockLink></BlockLink>
+                <BlockLink></BlockLink>
+                <BlockLink></BlockLink>
+                <BlockLink></BlockLink>
+            </section>
+            <section className={"snake-info-container"}>
+                <div className={"snake-info"}>
+                    <FontAwesomeIcon icon={faApple}/>
+                    <span>0</span>
+                </div>
+                <div className={"snake-info"}>
+                    <FontAwesomeIcon icon={faStar}/>
+                    <span>0</span>
+                </div>
+            </section>
+            <section className={"snake-field"}>
+                <CreateField snake={snakeStore.snake} apple={snakeStore.apple}/>
+            </section>
+            {snakeStore.end ? <section onClick={() => setStart(true)}>
+                    <button>restart</button>
+                </section>
+                : (snakeStore.start) ? <></> : <section onClick={() => setStart(true)}>
+                    <button>start</button>
+                </section>
+            }
+
+            <section className={"rules-container"}>
+                <h3>Как играть</h3>
+                <p>lorem</p>
+            </section>
+
+        </div>)
 })

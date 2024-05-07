@@ -198,24 +198,22 @@ export const Minesweeper = observer(() => {
                     <button onClick={() => mineStore.restart()}>restart</button>
                 </div>
             </section>
-            {
-                (mineStore.end) ?
-                    <section className={"mine-loose"}>
-                        <h3>Вы проиграли!</h3>
-                        <button onClick={() => mineStore.restart()}>Заново</button>
-                    </section> :  (mineStore.win) ?
-                    <section className={"mine-loose"}>
-                        <h3>Вы выиграли!</h3>
-                        <button onClick={() => mineStore.restart()}>Заново</button>
-                    </section>:<></>
-            }
+
+            <section className={"mine-loose"} style = {{display : mineStore.end ? "flex" : "none"}}>
+                <h3>Вы проиграли!</h3>
+                <button onClick={() => mineStore.restart()}>Заново</button>
+            </section>
+            <section className={"mine-loose"} style = {{display : mineStore.win ? "flex" : "none"}}>
+                <h3>Вы выиграли!</h3>
+                <button onClick={() => mineStore.restart()}>Заново</button>
+            </section>
 
 
             <table className={"mine-field"} onContextMenu={(e) => e.preventDefault()}>
                 {newField}
             </table>
 
-            <section className={"mine-rules"} style={{margin:"auto", marginBottom:"40px", minWidth:"500px"}}>
+            <section className={"mine-rules"} style={{margin: "auto", marginBottom: "40px", minWidth: "500px"}}>
                 <h3>Как играть</h3>
                 <p>
                     В сапере очень простые правила.
