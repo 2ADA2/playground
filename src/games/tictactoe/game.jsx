@@ -92,26 +92,31 @@ export const TicTacToe = () => {
             </section>
             <section>
                 <h3>Сейчас ходят: {move}</h3>
-            </section>1
-            {(winner)? <EndModal winner={winner} restart={() => restart()}/> : <></>}
+            </section>
+            {(winner) ? <EndModal winner={winner} restart={() => restart()}/> : <></>}
             <section className="tic-tac-toe-game">
                 <table>
                     <tr>
-                        <td className={((area[0]) ? "clicked": "")} onClick={() => updateField(0)}>{field[0]}</td>
-                        <td className={((area[1]) ? "clicked": "")} onClick={() => updateField(1)}>{field[1]}</td>
-                        <td className={((area[2]) ? "clicked": "")} onClick={() => updateField(2)}>{field[2]}</td>
+                        <td className={((area[0]) ? "clicked" : "")} onClick={() => updateField(0)}>{field[0]}</td>
+                        <td className={((area[1]) ? "clicked" : "")} onClick={() => updateField(1)}>{field[1]}</td>
+                        <td className={((area[2]) ? "clicked" : "")} onClick={() => updateField(2)}>{field[2]}</td>
                     </tr>
                     <tr>
-                        <td className={((area[3]) ? "clicked": "")} onClick={() => updateField(3)}>{field[3]}</td>
-                        <td className={((area[4]) ? "clicked": "")} onClick={() => updateField(4)}>{field[4]}</td>
-                        <td className={((area[5]) ? "clicked": "")} onClick={() => updateField(5)}>{field[5]}</td>
+                        <td className={((area[3]) ? "clicked" : "")} onClick={() => updateField(3)}>{field[3]}</td>
+                        <td className={((area[4]) ? "clicked" : "")} onClick={() => updateField(4)}>{field[4]}</td>
+                        <td className={((area[5]) ? "clicked" : "")} onClick={() => updateField(5)}>{field[5]}</td>
                     </tr>
                     <tr>
-                        <td className={((area[6]) ? "clicked": "")} onClick={() => updateField(6)}>{field[6]}</td>
-                        <td className={((area[7]) ? "clicked": "")} onClick={() => updateField(7)}>{field[7]}</td>
-                        <td className={((area[8]) ? "clicked": "")} onClick={() => updateField(8)}>{field[8]}</td>
+                        <td className={((area[6]) ? "clicked" : "")} onClick={() => updateField(6)}>{field[6]}</td>
+                        <td className={((area[7]) ? "clicked" : "")} onClick={() => updateField(7)}>{field[7]}</td>
+                        <td className={((area[8]) ? "clicked" : "")} onClick={() => updateField(8)}>{field[8]}</td>
                     </tr>
                 </table>
+            </section>
+            <section className={"mine-rules snake-rules"}>
+                <h3>Как играть</h3>
+                <p>Вы и так знаете правила классических крестиков-ноликов)</p>
+                <p>тот кто первый соберет ряд или диагональ тот выиграл.</p>
             </section>
         </div>
     )

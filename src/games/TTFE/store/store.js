@@ -11,7 +11,7 @@ class Store {
     end = 0;
     score = (Number(localStorage.getItem("score")) || 0);
     difference = 0;
-    maxScore = (Number(localStorage.getItem("max-score")) || 0);;
+    maxScore = (Number(localStorage.getItem("ttfe-record")) || 0);;
 
     constructor () {
         makeAutoObservable(this);
@@ -53,7 +53,11 @@ class Store {
         const oldScore = this.score;
         this.score = this.score + score;
         this.difference = this.score-oldScore;
-        localStorage.setItem("score", this.score)
+        localStorage.setItem("score", this.score);
+        if(this.score > this.maxScore) {
+            this.maxScore = this.score;
+            localStorage.setItem("ttfe-record", JSON.stringify(this.maxScore));
+        }
     }
     cleanDifference(){
         this.difference = 0;
