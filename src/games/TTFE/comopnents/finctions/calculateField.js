@@ -123,7 +123,9 @@ export const calcField = (field, index, check = true) => {
     }
     if (JSON.stringify(field) != JSON.stringify(newField)) newField = spawn(newField);
     if(check) {
-        if(!checkMoves(newField)) store.lose()
+        if(!checkMoves(newField)) {
+            store.lose()
+        }
         store.setScore(sum);
     }
     return newField;

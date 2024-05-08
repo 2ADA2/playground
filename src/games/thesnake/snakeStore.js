@@ -10,6 +10,10 @@ class SnakeStore {
     absoluteWay = 1
     apple = createApple(this.snake)
     isAte = false
+
+    record = localStorage.getItem("snake-record") ? Number(localStorage.getItem("snake-record")) : 0;
+    apples = 0;
+
     constructor() {
         makeAutoObservable(this)
     }
@@ -39,6 +43,14 @@ class SnakeStore {
     }
     setStart(start){
         this.start = start
+    }
+
+    setApples(apples){
+        this.apples = apples
+    }
+
+    setRecord(record){
+        this.record = record
     }
 }
 

@@ -7,7 +7,12 @@ export const checkMoves = (field) => {
         newField.push(newRow);
     });
     for (let i=-1;i<5;i++){
-        if (JSON.stringify(newField) !== JSON.stringify(calcField(newField,i, false))) return true
+        if (JSON.stringify(newField) !== JSON.stringify(calcField(newField,i, false))) {
+            return true
+        } else{
+            console.log(JSON.stringify(newField))
+            console.log(JSON.stringify(calcField(newField,i, false)))
+        }
     }
     return false
 }

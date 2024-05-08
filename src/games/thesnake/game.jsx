@@ -1,14 +1,15 @@
 import {CreateField} from "./createField";
-import "./snake.css";
-import {useEffect, useState} from "react";
+import "./styles/snake.css";
+import "./styles/snakeAnimation.css"
+import {useEffect, useRef, useState} from "react";
 import {prohibitScroll} from "../TTFE/comopnents/finctions/prohibitScroll";
 import snakeStore from "./snakeStore";
 import {observer} from "mobx-react-lite";
 import {createApple} from "./createApple";
 import {isArraysEqual} from "../../functions/checkArrays";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faApple} from "@fortawesome/free-brands-svg-icons";
-import {faStar} from "@fortawesome/free-solid-svg-icons";
+import {faApple, faGoogle, faWikipediaW, faYoutube} from "@fortawesome/free-brands-svg-icons";
+import {faPeopleArrows, faStar} from "@fortawesome/free-solid-svg-icons";
 import {BlockLink} from "../../components/link";
 
 export const TheSnake = observer(() => {
@@ -31,6 +32,7 @@ export const TheSnake = observer(() => {
         snakeStore.setWay(1)
         snakeStore.setSnake([[5, 10], [6, 10]])
         snakeStore.setApple(createApple([[5, 10], [6, 10]]))
+        snakeStore.setApples(0)
     }
 
     const checkEnd = (snake) => {
@@ -82,6 +84,11 @@ export const TheSnake = observer(() => {
         if (snake.at(-1)[0] === snakeStore.apple[0] && snake.at(-1)[1] === snakeStore.apple[1]) {
             snakeStore.setApple(createApple(snake))
             snakeStore.setIsAte(true)
+            snakeStore.setApples(snakeStore.apples + 1)
+            if(snakeStore.apples > snakeStore.record){
+                localStorage.setItem("snake-record", snakeStore.apples)
+                snakeStore.setRecord(snakeStore.apples)
+            }
         }
         checkEnd(snake.slice())
     }
@@ -112,44 +119,114 @@ export const TheSnake = observer(() => {
         <div className="the-snake">
             <section className={"snake-header-container"}>
                 <section className={"snake-header-background"}>
-
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
+                    <div className={"snake-header-anim"}></div>
                 </section>
                 <div className={"snake-header"}>
                     <h2>The snake</h2>
-                    <span>Змейка</span>
+                    <span>Классическая змейка</span>
                 </div>
             </section>
+
             <section className={"snake-links"}>
-                <BlockLink></BlockLink>
-                <BlockLink></BlockLink>
-                <BlockLink></BlockLink>
-                <BlockLink></BlockLink>
+                <span className={"links-header"}>полезные ссылки</span>
+                <BlockLink
+                    link="https://www.youtube.com/watch?time_continue=1&v=D4CZL5tIC-w&embeds_referring_euri=https%3A%2F%2Fwww.google.com%2Fsearch%3Fq%3D%25D0%25BA%25D0%25B0%25D0%25BA%2B%25D0%25B2%25D1%258B%25D0%25B8%25D0%25B3%25D1%2580%25D0%25B0%25D1%2582%25D1%258C%2B%25D0%25B2%2B%25D0%25B7%25D0%25BC%25D0%25B5%25D0&source_ve_path=MzY4NDIsMjg2NjY&feature=emb_logo"
+                    elem={<FontAwesomeIcon icon={faYoutube}/>}
+                    header={"Как выиграть"}
+                    text={"посмотрите обучающий ролик"}/>
+                <BlockLink
+                    link={"https://ru.wikipedia.org/wiki/%D0%97%D0%BC%D0%B5%D0%B9%D0%BA%D0%B0_(%D0%B8%D0%B3%D1%80%D0%B0)"}
+                    elem={<FontAwesomeIcon icon={faWikipediaW}/>}
+                    header={"Вся информация"}
+                    text={"Узнайте историю игры и прочую информацию"}
+                />
+                <BlockLink
+                    link={"https://www.google.com/search?q=%D0%B7%D0%BC%D0%B5%D0%B9%D0%BA%D0%B0+%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD&oq=pvtqrf&gs_lcrp=EgZjaHJvbWUqDwgCEAAYChiDARixAxiABDIGCAAQRRg5Mg8IARAAGAoYgwEYsQMYgAQyDwgCEAAYChiDARixAxiABDIJCAMQABgKGIAEMgkIBBAAGAoYgAQyCQgFEAAYChiABDIJCAYQABgKGIAEMgkIBxAAGAoYgAQyCQgIEAAYChiABDIJCAkQLhgKGIAE0gEIMjQzOGowajeoAgCwAgA&sourceid=chrome&ie=UTF-8"}
+                    elem={<FontAwesomeIcon icon={faGoogle}/>}
+                    header={"Играть в Google"}
+                    text={"можете протестировать версию от гугла"}
+                />
+                <BlockLink
+                    link={"https://snake.io/"}
+                    elem={<FontAwesomeIcon icon={faPeopleArrows}/>}
+                    header={"Играть онлайн"}
+                    text={"snake.io тоже у всех ассоциируется со змейкой..."}
+                />
             </section>
+
             <section className={"snake-info-container"}>
                 <div className={"snake-info"}>
                     <FontAwesomeIcon icon={faApple}/>
-                    <span>0</span>
+                    <span>{snakeStore.apples}</span>
                 </div>
                 <div className={"snake-info"}>
                     <FontAwesomeIcon icon={faStar}/>
-                    <span>0</span>
+                    <span>{snakeStore.record}</span>
                 </div>
             </section>
+
             <section className={"snake-field"}>
                 <CreateField snake={snakeStore.snake} apple={snakeStore.apple}/>
             </section>
-            {snakeStore.end ? <section onClick={() => setStart(true)}>
-                    <button>restart</button>
-                </section>
-                : (snakeStore.start) ? <></> : <section onClick={() => setStart(true)}>
-                    <button>start</button>
-                </section>
-            }
 
-            <section className={"rules-container"}>
+            <div className={"modal-container"}>
+                {snakeStore.end ?
+                    <section
+                        onClick={() => setStart(true)}
+                        className={"snake-modal"}
+                    >
+                        <button>restart</button>
+                    </section>
+                    : (snakeStore.start) ? <></> :
+                        <section
+                            onClick={() => setStart(true)}
+                            className={"snake-modal"}
+                        >
+                            <button>start</button>
+                        </section>
+                }
+            </div>
+
+            <section className={"mine-rules snake-rules"}>
                 <h3>Как играть</h3>
-                <p>lorem</p>
+                <p>
+                    Управляйте стрелочками и меняйте направление движения змейки
+                    ваша задача съесть как можно больше яблок, возможно даже победите)
+                </p>
+                <p>
+                    Вы имеете поле 20 на 20, т.е. вам надо собрать всего 398 яблок чтобы победить ),
+                    есть тактики для победы, в полезных ссылках можете поискать.
+                </p>
             </section>
-
         </div>)
 })
