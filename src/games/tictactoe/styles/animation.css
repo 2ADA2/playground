@@ -1,0 +1,314 @@
+.ttt-background {
+    width: 100%;
+    height: 1850px;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    background: radial-gradient(circle at top center, black, black,black, #273aa6);
+}
+
+.ttt-header {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ttt-elem {
+    z-index: 100;
+    position: absolute;
+    animation: ttt-anim 0.5s both;
+    background: linear-gradient(to left bottom, black, black, #281577, #88ffff);
+    border-radius: 2vw;
+}
+
+.ttt-elem:nth-child(2) {
+    z-index: 99;
+    animation: ttt-anim2 0.5s 0.05s both;
+}
+
+.ttt-elem:nth-child(3) {
+    z-index: 98;
+    animation: ttt-anim3 0.5s 0.1s both;
+}
+
+.ttt-elem:nth-child(4) {
+    z-index: 97;
+    animation: ttt-anim4 0.5s 0.15s both;
+}
+
+.ttt-elem:nth-child(5) {
+    z-index: 96;
+    animation: ttt-anim5 0.5s 0.2s both;
+}
+
+.ttt-elem:nth-child(6) {
+    z-index: 95;
+    animation: ttt-anim6 0.5s 0.25s both;
+}
+.ttt-elem:nth-child(7) {
+    z-index: 94;
+    animation: ttt-anim7 0.5s 0.3s both;
+}
+.ttt-elem:nth-child(8) {
+    z-index: 93;
+    animation: ttt-anim8 0.5s 0.35s both;
+}
+.ttt-elem:nth-child(9) {
+    z-index: 92;
+    animation: ttt-anim9 0.5s 0.40s both;
+}
+.ttt-elem:nth-child(10) {
+    z-index: 91;
+    animation: ttt-anim10 0.5s 0.45s both;
+}
+.ttt-elem:nth-child(11) {
+    z-index: 90;
+    animation: ttt-anim11 0.5s 0.5s both;
+}
+
+
+@keyframes ttt-anim {
+    0% {
+        opacity: 0;
+        width: 10vw;
+        height: 10vw;
+        top: -5vw;
+        right: -10vw;
+        rotate: 0;
+    }
+    100% {
+        opacity: 1;
+        width: 15vw;
+        height: 15vw;
+        right: -5vw;
+        top: 0;
+        rotate: 20deg;
+    }
+}
+
+@keyframes ttt-anim2 {
+    0% {
+        opacity: 0;
+        width: 10vw;
+        height: 10vw;
+        top: -5vw;
+        right: -10vw;
+        rotate: 0;
+    }
+    100% {
+        opacity: 1;
+        width: 16vw;
+        height: 16vw;
+        right: 0;
+        top: 2vw;
+        rotate: 25deg;
+        border-radius: 3.2vw;
+    }
+
+}
+
+@keyframes ttt-anim3 {
+    0% {
+        opacity: 0;
+        width: 10vw;
+        height: 10vw;
+        top: -5vw;
+        right: -10vw;
+        rotate: 0;
+    }
+    100% {
+        opacity: 1;
+        width: 17vw;
+        height: 17vw;
+        right: 6vw;
+        top: 4vw;
+        rotate: 30deg;
+        border-radius: 3.4vw;
+    }
+
+}
+
+@keyframes ttt-anim4 {
+    0% {
+        opacity: 0;
+        width: 10vw;
+        height: 10vw;
+        top: -5vw;
+        right: -10vw;
+        rotate: 0;
+    }
+    100% {
+        opacity: 1;
+        width: 18vw;
+        height: 18vw;
+        right: 10vw;
+        top: 5vw;
+        rotate: 35deg;
+        border-radius: 3.6vw;
+    }
+
+}
+
+@keyframes ttt-anim5 {
+    0% {
+        opacity: 0;
+        width: 10vw;
+        height: 10vw;
+        top: -5vw;
+        right: -10vw;
+        rotate: 0;
+    }
+    100% {
+        opacity: 1;
+        width: 20vw;
+        height: 20vw;
+        right: 13vw;
+        top: 6vw;
+        rotate: 40deg;
+        border-radius: 4vw;
+    }
+
+}
+
+@keyframes ttt-anim6 {
+    0% {
+        opacity: 0;
+        width: 10vw;
+        height: 10vw;
+        top: -5vw;
+        right: -10vw;
+        rotate: 0;
+    }
+    100% {
+        opacity: 1;
+        width: 25vw;
+        height: 25vw;
+        right: 15vw;
+        top: 5vw;
+        rotate: 45deg;
+        border-radius: 5vw;
+    }
+}
+@keyframes ttt-anim7 {
+    0% {
+        opacity: 0;
+        width: 10vw;
+        height: 10vw;
+        top: -5vw;
+        right: -10vw;
+        rotate: 0;
+    }
+    100% {
+        opacity: 1;
+        width: 30vw;
+        height: 30vw;
+        right: 20vw;
+        top: 5vw;
+        rotate: 50deg;
+        border-radius: 6vw;
+    }
+}
+@keyframes ttt-anim8 {
+    0% {
+        opacity: 0;
+        width: 10vw;
+        height: 10vw;
+        top: -5vw;
+        right: -10vw;
+        rotate: 0;
+    }
+    100% {
+        opacity: 1;
+        width: 35vw;
+        height: 35vw;
+        right: 25vw;
+        top: 3vw;
+        rotate: 55deg;
+        border-radius: 7vw;
+    }
+}
+@keyframes ttt-anim9 {
+    0% {
+        opacity: 0;
+        width: 10vw;
+        height: 10vw;
+        top: -5vw;
+        right: -10vw;
+        rotate: 0;
+    }
+    100% {
+        opacity: 1;
+        width: 40vw;
+        height: 40vw;
+        right: 30vw;
+        top: 0;
+        rotate: 60deg;
+        border-radius: 8vw;
+    }
+}
+@keyframes ttt-anim10 {
+    0% {
+        opacity: 0;
+        width: 10vw;
+        height: 10vw;
+        top: -5vw;
+        right: -10vw;
+        rotate: 0;
+    }
+    100% {
+        opacity: 1;
+        width: 45vw;
+        height: 45vw;
+        right: 40vw;
+        top: -5vw;
+        rotate: 65deg;
+        border-radius: 9vw;
+    }
+}
+@keyframes ttt-anim11 {
+    0% {
+        opacity: 0;
+        width: 10vw;
+        height: 10vw;
+        top: -5vw;
+        right: -10vw;
+        rotate: 0;
+    }
+    100% {
+        opacity: 1;
+        width: 55vw;
+        height: 55vw;
+        right: 50vw;
+        top: -15vw;
+        rotate: 65deg;
+        border-radius: 11vw;
+    }
+}
+
+.ttt-header h2 {
+    font-size: clamp(40px, 5vw, 160px);
+    font-weight: 400;
+    position: relative;
+    animation: ttt-header-show 0.5s both;
+}
+
+.ttt-header span {
+    font-size: clamp(20px, 1.5vw, 60px);
+    font-weight: 100;
+    position: relative;
+    animation: ttt-header-show 0.5s 0.2s both;
+}
+
+@keyframes ttt-header-show {
+    0% {
+        opacity: 0;
+        top: -100px;
+    }
+    100% {
+        opacity: 1;
+        top: 0;
+    }
+}

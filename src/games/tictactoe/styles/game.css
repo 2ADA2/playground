@@ -1,7 +1,7 @@
 .tic-tac-toe-game{
     width: 700px;
     height: 700px;
-    background: #232323;
+    background: rgba(0, 0, 0, 0);
     border-radius: 25px;
     margin: auto;
 }
@@ -12,6 +12,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    border: 1px solid white;
+    border-radius: 20px;
 }
 .tic-tac-toe-game table tr{
     display: flex;
@@ -21,7 +23,7 @@
     z-index: 0;
     width:220px;
     height: 220px;
-    background: #414141;
+    background: rgba(65, 65, 65, 0.5);
     border-radius: 20px;
     color:white;
     display: flex;
@@ -30,12 +32,17 @@
     overflow: hidden;
 }
 .tic-tac-toe-game table td:hover{
-    background: #5b5b5b;
+    background: rgba(65, 65, 65, 0.6);
     cursor: pointer;
 }
 .tic-tac-toe-game table .clicked{
-    background: #4b4b4b;
+    background: rgba(65, 65, 65, 0.5);
     animation: add 200ms both;
+    cursor: default;
+}
+.tic-tac-toe-game table .clicked:hover{
+    background: rgba(65, 65, 65, 0.5);
+    cursor: default;
 }
 
 @keyframes add {
@@ -53,8 +60,9 @@
     z-index: 100;
     margin: 0 auto;
     position: absolute;
-    top: 200px; left: 0; bottom: 0; right: 0;
-    width:720px;
+    top: 860px;
+    left: calc(50vw - 350px);
+    width:700px;
     height:700px;
     background: rgba(0, 0, 0, 0.4);
     border-radius: 30px;

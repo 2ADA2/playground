@@ -1,10 +1,15 @@
 import {useEffect, useState} from "react";
 import "./styles/game.css"
+import "./styles/animation.css"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faO, faX} from "@fortawesome/free-solid-svg-icons";
+import {faCircle, faClock, faCross, faFlag, faHistory, faO, faSearch, faX} from "@fortawesome/free-solid-svg-icons";
+import tttStore from "./store";
 import {EndModal} from "./endModal";
+import {BlockLink} from "../../components/link";
+import {faYandex} from "@fortawesome/free-brands-svg-icons";
+import {observer} from "mobx-react-lite";
 
-function calculateWinner(squares) {
+const calculateWinner = (squares) => {
     const lines = [
         [0, 1, 2],
         [3, 4, 5],
@@ -24,22 +29,22 @@ function calculateWinner(squares) {
     return null;
 }
 
-export const TicTacToe = () => {
+export const TicTacToe = observer( () => {
     const [winner, setWinner] = useState(null)
     const [area, setArea] = useState((localStorage.getItem("TicTacToe")) ?
         JSON.parse(localStorage.getItem("TicTacToe"))
-        : ["","","","","","","","",""]);
+        : ["", "", "", "", "", "", "", "", ""]);
     const [field, setField] = useState([])
     const [move, setMove] = useState("X")
 
-    function newField(area){
+    function newField(area) {
         let field = []
-        for(let i of area){
-            if(!i){
+        for (let i of area) {
+            if (!i) {
                 field.push("")
-            } else if(i === "X"){
+            } else if (i === "X") {
                 field.push(<FontAwesomeIcon icon={faX}/>)
-            } else{
+            } else {
                 field.push(<FontAwesomeIcon icon={faO}/>)
             }
         }
@@ -49,50 +54,105 @@ export const TicTacToe = () => {
     useEffect(() => {
         newField(area)
         setWinner(calculateWinner(area))
-        if(!(area.filter(a => !a).length % 2)) setMove("O")
+        if (!(area.filter(a => !a).length % 2)) setMove("O")
 
     }, []);
 
-    function restart(){
-        setField(["","","","","","","","",""])
-        setArea(["","","","","","","","",""])
-        localStorage.setItem("TicTacToe","")
+    function restart() {
+        setField(["", "", "", "", "", "", "", "", ""])
+        setArea(["", "", "", "", "", "", "", "", ""])
+        localStorage.setItem("TicTacToe", "")
         setWinner("")
         setMove("X")
     }
 
-    function updateField(val){
-        if(area[val] || winner) return
+    function updateField(val) {
+        if (area[val] || winner) return
         let oldField = area.slice()
-        if(move === "X"){
+        if (move === "X") {
             setMove("O")
-            oldField.splice(val,1,"X")
+            oldField.splice(val, 1, "X")
             setArea(oldField)
-        } else{
+        } else {
             setMove("X");
-            oldField.splice(val,1,"O")
+            oldField.splice(val, 1, "O")
             setArea(oldField)
         }
         localStorage.setItem("TicTacToe", JSON.stringify(oldField))
         calculateWinner(area)
         newField(oldField)
         const win = calculateWinner(oldField)
+        if(win === "X") {
+            tttStore.setX()
+        } else if (win === "O") {
+            tttStore.setO()
+        }
         setWinner(win)
-        if(!win && !oldField.includes("")) setWinner("nobody")
+        if (!win && !oldField.includes("")) setWinner("nobody")
 
     }
 
     return (
         <div className="tic-tac-toe">
             <section className="tic-tac-toe-header">
-                <div>
-                    <h1>Tic Tac Toe</h1>
-                    <h2>Крестики-нолики</h2>
+                <div className={"ttt-background"}>
+                    <div className={"ttt-elem"}></div>
+                    <div className={"ttt-elem"}></div>
+                    <div className={"ttt-elem"}></div>
+                    <div className={"ttt-elem"}></div>
+                    <div className={"ttt-elem"}></div>
+                    <div className={"ttt-elem"}></div>
+                    <div className={"ttt-elem"}></div>
+                    <div className={"ttt-elem"}></div>
+                    <div className={"ttt-elem"}></div>
+                    <div className={"ttt-elem"}></div>
+                    <div className={"ttt-elem"}></div>
+                </div>
+                <div className={"ttt-header"}>
+                    <h2>Tic Tac Toe</h2>
+                    <span>Крестики-нолики</span>
                 </div>
             </section>
-            <section>
-                <h3>Сейчас ходят: {move}</h3>
+
+            <section className={"mine-rules"} style={{margin:"auto", minWidth:"700px"}}>
+                <h3>История</h3>
+                <p>
+                    Многие думают, что Крестики-Нолики - это простая игра. Но если углубиться в ее историю,
+                    можно узнать много интересного. Исследование происхождения этой игры показывает её особое
+                    место в мире игр.
+                </p>
+                <div className={"ttt-links"} style={{display:"flex", gap:"20px"}}>
+                    <BlockLink
+                    link={"https://tictactoefree.com/ru/statji/istoriya-i-proishozhdenie-igry-krestiki-noliki#:~:text=%D0%94%D1%80%D0%B5%D0%B2%D0%BD%D0%B8%D0%B9%20%D0%95%D0%B3%D0%B8%D0%BF%D0%B5%D1%82,%D0%9D%D0%BE%D0%BB%D0%B8%D0%BA%D0%B8%2C%20%D0%BF%D1%80%D0%B8%D0%B4%D1%83%D0%BC%D0%B0%D0%B2%20%D0%B5%D1%91%20%D0%BF%D0%B5%D1%80%D0%B2%D1%83%D1%8E%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8E."}
+                    text={"Узнайте историю игры крестики-нолики"}
+                    header={"История"}
+                    elem={<FontAwesomeIcon icon={faHistory}/>}
+                    />
+                    <BlockLink
+                        link={"https://yandex.ru/games/app/98511"}
+                        text={"Можете попробовать несоклько режимов"}
+                        header={"Игра от Яндекса"}
+                        elem={<FontAwesomeIcon icon={faYandex}/>}
+                    />
+                </div>
+
             </section>
+
+            <section className={"mine-info-panel"} style={{width:"700px"}}>
+                <div>
+                    <h3 style={{fontSize: "24px", fontWeight: "400"}}>Сейчас ходят: {move}</h3>
+                </div>
+                <div style={{display: "flex", gap: "40px", fontSize: "24px"}}>
+                    <div>
+                        <FontAwesomeIcon icon={faX}/> : {tttStore.x || 0}
+                    </div>
+                    <div>
+                        <FontAwesomeIcon icon={faO}/> : {tttStore.o || 0}
+                    </div>
+                </div>
+            </section>
+
+
             {(winner) ? <EndModal winner={winner} restart={() => restart()}/> : <></>}
             <section className="tic-tac-toe-game">
                 <table>
@@ -120,4 +180,4 @@ export const TicTacToe = () => {
             </section>
         </div>
     )
-}
+})

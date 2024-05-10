@@ -27,52 +27,52 @@
 
 .mine-header-anim:nth-child(2) {
     z-index: 99;
-    animation: mine2 0.5s both;
+    animation: mine2 0.5s 0.05s both;
 }
 
 .mine-header-anim:nth-child(3) {
     z-index: 98;
-    animation: mine3 0.5s both;
+    animation: mine3 0.5s 0.1s both;
 }
 
 .mine-header-anim:nth-child(4) {
     z-index: 97;
-    animation: mine4 0.5s both;
+    animation: mine4 0.5s 0.15s both;
 }
 
 .mine-header-anim:nth-child(5) {
     z-index: 96;
-    animation: mine5 0.5s both;
+    animation: mine5 0.5s 0.2s both;
 }
 
 .mine-header-anim:nth-child(6) {
     z-index: 95;
-    animation: mine6 0.5s both;
+    animation: mine6 0.5s 0.25s both;
 }
 
 .mine-header-anim:nth-child(7) {
     z-index: 94;
-    animation: mine7 0.5s both;
+    animation: mine7 0.5s 0.3s both;
 }
 
 .mine-header-anim:nth-child(8) {
     z-index: 93;
-    animation: mine8 0.5s both;
+    animation: mine8 0.5s 0.35s both;
 }
 
 .mine-header-anim:nth-child(9) {
     z-index: 92;
-    animation: mine9 0.5s both;
+    animation: mine9 0.5s 0.4s both;
 }
 
 .mine-header-anim:nth-child(10) {
     z-index: 91;
-    animation: mine10 0.5s both;
+    animation: mine10 0.5s 0.45s both;
 }
 
 .mine-header-anim:nth-child(11) {
     z-index: 90;
-    animation: mine11 0.5s both;
+    animation: mine11 0.5s 0.5s both;
 }
 
 .mine-header-anim svg{
