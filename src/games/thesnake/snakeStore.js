@@ -14,6 +14,8 @@ class SnakeStore {
     record = localStorage.getItem("snake-record") ? Number(localStorage.getItem("snake-record")) : 0;
     apples = 0;
 
+    time = Number(localStorage.getItem("snakeTime")) || 0
+
     constructor() {
         makeAutoObservable(this)
     }
@@ -51,6 +53,10 @@ class SnakeStore {
 
     setRecord(record){
         this.record = record
+    }
+    setTime () {
+        this.time += 1
+        localStorage.setItem("snakeTime", this.time)
     }
 }
 

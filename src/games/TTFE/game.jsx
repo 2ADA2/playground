@@ -13,10 +13,18 @@ import { checkMoves } from "./comopnents/finctions/checkMoves";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faReact} from "@fortawesome/free-brands-svg-icons";
 
-
 export const Game2048 = observer(() => {
     const field = JSON.parse(JSON.stringify(store.field));
     const end = ((!checkMoves(field)) || store.end);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            store.setTime()
+        },1000)
+        return() => {
+            clearInterval(interval)
+        }
+    }, []);
 
     function handleKeyDown(e){
         const codes = ["ArrowUp", "ArrowRight", "ArrowDown", "ArrowLeft"];

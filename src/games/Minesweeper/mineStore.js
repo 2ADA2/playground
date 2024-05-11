@@ -2,6 +2,7 @@ import {makeAutoObservable} from "mobx";
 import {generateField} from "./generateField";
 import {isArraysEqual} from "../../functions/checkArrays";
 import {clear} from "@testing-library/user-event/dist/clear";
+import Global from "../../store/global";
 
 class MineStore {
     end = false;
@@ -14,6 +15,8 @@ class MineStore {
 
     timer = 0
     interval = null
+
+    time = Number(localStorage.getItem("mineTime")) || 0
 
     constructor() {
         makeAutoObservable(this)
@@ -68,11 +71,18 @@ class MineStore {
         this.end = false;
         clearInterval(this.interval)
         this.start = false;
+        Global.setMinesweeperRecords(this.timer)
+        Global.setMinesweeperRecordsMines(this.opened.length)
         this.win = false;
         this.field = generateField([])
         this.detected = []
         this.opened = []
+
         this.timer = 0
+    }
+    setTime () {
+        this.time += 1
+        localStorage.setItem("mineTime", this.time)
     }
 }
 

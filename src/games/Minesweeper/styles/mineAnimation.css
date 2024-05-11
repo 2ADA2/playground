@@ -20,7 +20,7 @@
 }
 .mine-header-anim {
     position: absolute;
-    background: linear-gradient(to bottom right, #000, #000, #4fc734, #56cbb9);
+    background: linear-gradient(to bottom right, #000, #000, #278710, #90ffef);
     z-index: 100;
     animation: mine1 0.5s both;
 }

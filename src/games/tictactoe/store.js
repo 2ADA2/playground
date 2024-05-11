@@ -3,6 +3,7 @@ import {makeAutoObservable} from "mobx";
 class tttStore {
     x = 0;
     o = 0;
+
     constructor(){
         makeAutoObservable(this)
     }

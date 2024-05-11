@@ -1,10 +1,13 @@
+import store from "../../store/store";
+
 export const Field = (props) => {
     let field = []
     props.mass.forEach(e => {
         let row = [];
         e.forEach(elem => {
+            store.setMaxBlock(parseInt(elem));
             if(typeof(elem) != "number"){
-                if(elem == "2n" || elem == "4n"){
+                if(elem === "2n" || elem === "4n"){
                     let name = parseInt(elem);
                     row.push(<tr className = 'block'>
                     {(elem)? <div className = {`number number${name} new-number`}>{name}</div>:""}

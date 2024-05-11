@@ -11,9 +11,20 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faApple, faGoogle, faWikipediaW, faYoutube} from "@fortawesome/free-brands-svg-icons";
 import {faPeopleArrows, faStar} from "@fortawesome/free-solid-svg-icons";
 import {BlockLink} from "../../components/link";
+import Global from "../../store/global";
+import SnakeStore from "./snakeStore";
 
 export const TheSnake = observer(() => {
     const [start, setStart] = useState(snakeStore.start)
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            SnakeStore.setTime()
+        },1000)
+        return() => {
+            clearInterval(interval)
+        }
+    }, []);
 
     const handleKeyDown = (e) => {
         if (!snakeStore.start) return
@@ -38,11 +49,14 @@ export const TheSnake = observer(() => {
     const checkEnd = (snake) => {
         const head = snake.at(-1).slice()
         if (head[0] >= 20 || head[0] < 0 || head[1] >= 20 || head[1] < 0) {
+            Global.setSnakeRecords(snakeStore.apples)
             restart()
+
             return;
         }
         for (let block of snake.slice(0, snake.length - 2)) {
             if (isArraysEqual(head, block)) {
+                Global.setSnakeRecords(snakeStore.apples)
                 restart()
                 return;
             }

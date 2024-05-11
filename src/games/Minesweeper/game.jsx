@@ -8,10 +8,21 @@ import {observer} from "mobx-react-lite";
 import clearEmpty from "./clearEmpty";
 import {BlockLink} from "../../components/link";
 import {faWikipediaW, faYoutube} from "@fortawesome/free-brands-svg-icons";
+import {useEffect} from "react";
 
 import("./styles/mineAnimation.css")
 
 export const Minesweeper = observer(() => {
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            mineStore.setTime()
+        },1000)
+        return() => {
+            clearInterval(interval)
+        }
+    }, []);
+
     const handleClick = (block) => {
         if (mineStore.end || mineStore.win) return;
         const [x, y, val] = block
