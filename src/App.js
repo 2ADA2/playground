@@ -3,7 +3,6 @@ import {routes} from "./functions/routes";
 import {Layout} from "./layout/layout";
 import {useEffect} from "react";
 import Global from "./store/global";
-import {clear} from "@testing-library/user-event/dist/clear";
 
 function App() {
     useEffect(() => {

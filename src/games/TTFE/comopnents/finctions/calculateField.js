@@ -121,7 +121,7 @@ export const calcField = (field, index, check = true) => {
             }
            break;
     }
-    if (JSON.stringify(field) != JSON.stringify(newField)) newField = spawn(newField);
+    if (JSON.stringify(field) !== JSON.stringify(newField)) newField = spawn(newField);
     if(check) {
         if(!checkMoves(newField)) {
             store.lose()

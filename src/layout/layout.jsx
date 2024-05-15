@@ -30,8 +30,8 @@ export const Layout = () => {
                 </div>
                 <nav>
                     <Link onClick={() => setNav(!nav)}>Playground</Link>
-                    <Link onClick={() => setNav(false)} to={Stats_ROUTE}>Statistics</Link>
-                    <Link onClick={() => setNav(false)} to={ABOUT_ROUTE}>About</Link>
+                    <Link onClick={() => setNav(false)} to={Stats_ROUTE}>Статистика</Link>
+                    <Link onClick={() => setNav(false)} to={ABOUT_ROUTE}>О проекте</Link>
                 </nav>
 
             </header>
