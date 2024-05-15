@@ -13,13 +13,39 @@ export const Stats = observer(() => {
     return (
         <div className="stats">
             <section className={"stats-header"}>
+                <section className={"stats-background"}>
+                    <div style={{zIndex:"-100", position:"relative"}}>
+                        <div className={"stats-header-block"}></div>
+                        <div className={"stats-header-block"}></div>
+                        <div className={"stats-header-block"}></div>
+                        <div className={"stats-header-block"}></div>
+                        <div className={"stats-header-block"}></div>
+                        <div className={"stats-header-block"}></div>
+                        <div className={"stats-header-block"}></div>
+                        <div className={"stats-header-block"}></div>
+                        <div className={"stats-header-block"}></div>
+                        <div className={"stats-header-block"}></div>
+                        <div className={"stats-header-block"}></div>
+                        <div className={"stats-header-block"}></div>
+                        <div className={"stats-header-block"}></div>
+                        <div className={"stats-header-block"}></div>
+                        <div className={"stats-header-block"}></div>
+                        <div className={"stats-header-block"}></div>
+                        <div className={"stats-header-block"}></div>
+                        <div className={"stats-header-block"}></div>
+                        <div className={"stats-header-block"}></div>
+                        <div className={"stats-header-block"}></div>
+                    </div>
+
+                </section>
                 <div className={"stats-headline"}>
                     <h2>Статистика</h2>
                     <span>Статистика по играм</span>
                 </div>
             </section>
 
-            <section className={"mine-rules"} style={{margin: "auto", marginBottom: "40px", minWidth: "500px"}}>
+            <section className={"mine-rules stats-mine-rules"}
+                     style={{margin: "auto", marginBottom: "40px", minWidth: "500px"}}>
                 <h3>Статистика</h3>
                 <p>
                     На этой странице вы можете узнать свою статистику по играм,
@@ -31,7 +57,7 @@ export const Stats = observer(() => {
                     <li><FontAwesomeIcon icon={faBomb}/> Сапер</li>
                     <li><FontAwesomeIcon icon={faRodSnake}/> Змейка</li>
                 </ul>
-                <p style={{marginTop:"40px"}}>
+                <p style={{marginTop: "40px"}}>
                     Посмотрите свои рекорды, сколько вы наиграли и чего достигли.
                 </p>
             </section>
@@ -42,7 +68,7 @@ export const Stats = observer(() => {
 
             <section className={"stats-main"}>
                 <section>
-                    <div className={"mine-rules"}>
+                    <div className={"mine-rules stats-mine-rules"}>
                         <h3>2048</h3>
                     </div>
                     <div className={"ttfe-stats stats-block"}>
@@ -77,7 +103,7 @@ export const Stats = observer(() => {
                 </section>
 
                 <section>
-                    <div className={"mine-rules"}>
+                    <div className={"mine-rules stats-mine-rules"}>
                         <h3>Сапер</h3>
                     </div>
                     <div className={"ttfe-stats stats-block"}>
@@ -93,11 +119,11 @@ export const Stats = observer(() => {
                             </div>
                             <div>
                                 <span>Лучший результат по времени: </span>
-                                <span>{Global.mineSweeperRecords.slice().sort((a, b) => a - b).at(-1) || " нет данных"}</span>
+                                <span>{Global.mineSweeperRecords.slice().sort((a, b) => a - b).at(-1)+ "c" || " нет данных"}</span>
                             </div>
                             <div>
                                 <span>Самый низкий результат по времени): </span>
-                                <span>{Global.mineSweeperRecords.slice().sort((a, b) => a - b)[0] || " нет данных"}</span>
+                                <span>{Global.mineSweeperRecords.slice().sort((a, b) => a - b)[0]+ "c" || " нет данных"}</span>
                             </div>
                             <div>
                                 <span>Средний результат по времени(среднее арифметическое): </span>
@@ -120,7 +146,7 @@ export const Stats = observer(() => {
                 </section>
 
                 <section>
-                    <div className={"mine-rules"}>
+                    <div className={"mine-rules stats-mine-rules"}>
                         <h3>Змейка</h3>
                     </div>
                     <div className={"ttfe-stats stats-block"}>

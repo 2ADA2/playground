@@ -1,6 +1,6 @@
 .stats {
     min-height: 2000px;
-    background: #171717;
+    background: radial-gradient(circle at left top, rgba(0, 0, 0, 0), #26042e);
 }
 
 .stats-header {
@@ -9,90 +9,102 @@
     display: flex;
     padding-left: 30%;
     justify-content: center;
-    gap:40px;
+    gap: 40px;
     flex-direction: column;
-
 
 }
 
-.total-time{
+.total-time {
     margin: 20px auto;
     display: flex;
     width: 600px;
     border: 1px solid white;
     padding: 20px 60px;
     border-radius: 10px;
-    gap:20px;
+    gap: 20px;
     line-height: 30px;
 }
 
-.total-time h3{
+.total-time h3 {
     font-weight: 300;
     line-height: 30px;
 }
 
-.stats-main{
+.stats-main {
     display: flex;
     flex-direction: column;
-    gap:80px;
     max-width: 2000px;
     margin: auto;
     min-width: 700px;
 }
 
-.stats-header h2{
+.stats-header h2 {
     font-size: clamp(40px, 5vw, 160px);
     font-weight: 400;
 }
 
-.stats-header span{
+.stats-header span {
     font-size: clamp(20px, 1.5vw, 60px);
     font-weight: 300;
     padding-left: 40px;
 }
 
-.stats-block{
+.stats-block {
     display: flex;
-    gap:20px;
+    gap: 20px;
     width: 100%;
-    height: 500px;
+    min-height: 500px;
     padding: 0 40px;
+    background: rgba(0, 0, 0, 0.77);
+    padding-bottom: 40px;
 }
 
-.chart, .chart-info{
-    background: #292525;
-    width: 70%;
-    height: 100%;
+.chart, .chart-info {
+    margin-top: 20px;
+    background: rgba(41, 37, 37, 0.53);
+    width: 65%;
 }
-.chart-info{
-    width: 30%;
+
+.chart-info {
+    width: 35%;
     display: flex;
     flex-direction: column;
-    gap:20px;
-    font-size: clamp(10px, 1vw, 30px);
+    gap: 20px;
+    font-size: clamp(6px, 1vw, 30px);
     padding: 20px;
     font-weight: 100;
 }
-.chart-info h4{
+
+.chart-info span:last-child {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-info h4 {
     margin: 20px auto 10px auto;
     font-size: clamp(10px, 1.3vw, 30px);
     font-weight: 400;
 }
-.chart-info .number{
+
+.chart-info .number {
     width: 100%;
     height: 150px;
     padding: 0;
 }
 
-.chart-info div{
+.chart-info div {
     display: flex;
     justify-content: center;
-    gap:20px;
+    gap: 20px;
 }
-.chart-info div span:nth-child(1){
+
+.chart-info div span:nth-child(1) {
     width: 80%;
 }
-.chart-info div span:nth-child(1):after{
+
+.chart-info div span:nth-child(1):after {
     content: "";
     display: block;
     width: 100%;
@@ -100,8 +112,506 @@
     margin-top: 2px;
     background: rgba(255, 255, 255, 0.7);
 }
-.chart-info div span:nth-child(2){
+
+.chart-info div span:nth-child(2) {
     width: 20%;
     font-weight: 400;
     text-align: center;
 }
+
+section .stats-mine-rules {
+    width: 100%;
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    height: auto;
+    padding-top: 40px;
+    border-radius: 0;
+}
+
+section .stats-mine-rules h3 {
+    font-size: clamp(24px, 4vw, 60px);
+    padding-left: 20px;
+}
+
+.stats-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.stats-background .stats-header-block {
+    z-index: 100;
+    width: 10vw;
+    height: 10vw;
+    min-height: 0;
+    position: absolute;
+    border-radius: 2vw;
+    background: linear-gradient(to left bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgb(26, 0, 35), rgba(65, 0, 87, 0.63), #ff72ac);
+    animation: stats-header-anim 0.3s both;
+    padding: 0;
+    aspect-ratio: 1 / 1;
+}
+
+.stats-header-block:nth-child(2) {
+    z-index: 99;
+    animation: stats-header-anim2 0.3s 0.05s both;
+}
+
+.stats-header-block:nth-child(3) {
+    z-index: 98;
+    animation: stats-header-anim3 0.3s 0.1s both;
+}
+
+.stats-header-block:nth-child(4) {
+    z-index: 97;
+    animation: stats-header-anim4 0.3s 0.15s both;
+}
+
+.stats-header-block:nth-child(5) {
+    z-index: 96;
+    animation: stats-header-anim5 0.3s 0.2s both;
+}
+
+.stats-header-block:nth-child(6) {
+    z-index: 95;
+    animation: stats-header-anim6 0.3s 0.25s both;
+}
+
+.stats-header-block:nth-child(7) {
+    z-index: 94;
+    animation: stats-header-anim7 0.3s 0.3s both;
+}
+
+.stats-header-block:nth-child(8) {
+    z-index: 93;
+    animation: stats-header-anim8 0.3s 0.35s both;
+}
+
+.stats-header-block:nth-child(9) {
+    z-index: 92;
+    animation: stats-header-anim9 0.3s 0.4s both;
+}
+
+.stats-header-block:nth-child(10) {
+    z-index: 91;
+    animation: stats-header-anim10 0.3s 0.45s both;
+}
+
+
+@keyframes stats-header-anim {
+    0% {
+        rotate: 0;
+        left: 100vw;
+        top: -100px;
+    }
+    100% {
+        rotate: 5deg;
+        left: 90vw;
+        top: 0;
+    }
+}
+
+@keyframes stats-header-anim2 {
+    0% {
+        rotate: 0;
+        left: 100vw;
+        top: -100px;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 2vw;
+    }
+    100% {
+        rotate: 10deg;
+        left: 85vw;
+        top: 0;
+        width: 13vw;
+        height: 13vw;
+        border-radius: 2.6vw;
+    }
+}
+
+@keyframes stats-header-anim3 {
+    0% {
+        rotate: 0;
+        left: 100vw;
+        top: -100px;
+        border-radius: 2vw;
+    }
+    100% {
+        rotate: 15deg;
+        left: 80vw;
+        top: 0;
+        width: 16vw;
+        height: 16vw;
+        border-radius: 3.2vw;
+    }
+}
+
+@keyframes stats-header-anim4 {
+    0% {
+        rotate: 0;
+        left: 100vw;
+        top: -100px;
+        border-radius: 2vw;
+    }
+    100% {
+        rotate: 20deg;
+        left: 73vw;
+        top: -10px;
+        width: 20vw;
+        height: 20vw;
+        border-radius: 4vw;
+    }
+}
+
+@keyframes stats-header-anim5 {
+    0% {
+        rotate: 0;
+        left: 100vw;
+        top: -100px;
+        border-radius: 2vw;
+    }
+    100% {
+        rotate: 25deg;
+        left: 65vw;
+        top: -50px;
+        width: 25vw;
+        height: 25vw;
+        border-radius: 5vw;
+    }
+}
+
+@keyframes stats-header-anim6 {
+    0% {
+        rotate: 0;
+        left: 100vw;
+        top: -100px;
+        border-radius: 2vw;
+    }
+    100% {
+        rotate: 30deg;
+        left: 55vw;
+        top: -70px;
+        width: 30vw;
+        height: 30vw;
+        border-radius: 6vw;
+    }
+}
+
+@keyframes stats-header-anim7 {
+    0% {
+        rotate: 0;
+        left: 100vw;
+        top: -100px;
+        border-radius: 2vw;
+    }
+    100% {
+        rotate: 35deg;
+        left: 40vw;
+        top: -100px;
+        width: 35vw;
+        height: 35vw;
+        border-radius: 7vw;
+    }
+}
+
+@keyframes stats-header-anim8 {
+    0% {
+        rotate: 0;
+        left: 100vw;
+        top: -100px;
+        border-radius: 2vw;
+    }
+    100% {
+        rotate: 40deg;
+        left: 25vw;
+        top: -150px;
+        width: 40vw;
+        height: 40vw;
+        border-radius: 8vw;
+    }
+}
+
+@keyframes stats-header-anim9 {
+    0% {
+        rotate: 0;
+        left: 100vw;
+        top: -100px;
+        border-radius: 2vw;
+    }
+    100% {
+        rotate: 45deg;
+        left: 10vw;
+        top: -200px;
+        width: 45vw;
+        height: 45vw;
+        border-radius: 9vw;
+    }
+}
+
+@keyframes stats-header-anim10 {
+    0% {
+        rotate: 0;
+        left: 100vw;
+        top: -100px;
+        border-radius: 2vw;
+    }
+    100% {
+        rotate: 50deg;
+        left: -10vw;
+        top: -250px;
+        width: 50vw;
+        height: 50vw;
+        border-radius: 10vw;
+    }
+}
+
+.stats-header-block:nth-child(11),
+.stats-header-block:nth-child(12),
+.stats-header-block:nth-child(13),
+.stats-header-block:nth-child(14),
+.stats-header-block:nth-child(15),
+.stats-header-block:nth-child(16),
+.stats-header-block:nth-child(17),
+.stats-header-block:nth-child(18),
+.stats-header-block:nth-child(19),
+.stats-header-block:nth-child(20) {
+    background: linear-gradient(to right bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgb(35, 0, 34), rgb(65, 0, 87), #ff72ac);
+    z-index: 200;
+    animation: stats-header-anim11 0.3s 0.05s both;
+}
+
+.stats-header-block:nth-child(12) {
+    z-index: 199;
+    animation: stats-header-anim12 0.3s 0.10s both;
+}
+
+.stats-header-block:nth-child(13) {
+    z-index: 198;
+    animation: stats-header-anim13 0.3s 0.15s both;
+}
+
+.stats-header-block:nth-child(14) {
+    z-index: 197;
+    animation: stats-header-anim14 0.3s 0.2s both;
+}
+
+.stats-header-block:nth-child(15) {
+    z-index: 196;
+    animation: stats-header-anim15 0.3s 0.25s both;
+}
+
+.stats-header-block:nth-child(16) {
+    z-index: 195;
+    animation: stats-header-anim16 0.3s 0.3s both;
+}
+
+.stats-header-block:nth-child(17) {
+    z-index: 194;
+    animation: stats-header-anim17 0.3s 0.35s both;
+}
+
+.stats-header-block:nth-child(18) {
+    z-index: 193;
+    animation: stats-header-anim18 0.3s 0.4s both;
+}
+
+.stats-header-block:nth-child(19) {
+    z-index: 192;
+    animation: stats-header-anim19 0.3s 0.45s both;
+}
+
+.stats-header-block:nth-child(20) {
+    z-index: 191;
+    animation: stats-header-anim20 0.3s 0.5s both;
+}
+
+
+@keyframes stats-header-anim11 {
+    0% {
+        rotate: 0;
+        left: -10vw;
+        top: -100px;
+    }
+    100% {
+        rotate: -5deg;
+        left: 0;
+        top: 0;
+    }
+}
+
+@keyframes stats-header-anim12 {
+    0% {
+        rotate: 0;
+        left: 0;
+        top: -100px;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 2vw;
+    }
+    100% {
+        rotate: -10deg;
+        left: 5vw;
+        top: 0;
+        width: 13vw;
+        height: 13vw;
+        border-radius: 2.6vw;
+    }
+}
+
+@keyframes stats-header-anim13 {
+    0% {
+        rotate: 0;
+        left: 0;
+        top: -100px;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 2vw;
+    }
+    100% {
+        rotate: -15deg;
+        left: 10vw;
+        top: 0;
+        width: 16vw;
+        height: 16vw;
+        border-radius: 3.2vw;
+    }
+}
+
+@keyframes stats-header-anim14 {
+    0% {
+        rotate: 0;
+        left: 0;
+        top: -100px;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 2vw;
+    }
+    100% {
+        rotate: -20deg;
+        left: 13vw;
+        top: -10px;
+        width: 20vw;
+        height: 20vw;
+        border-radius: 4vw;
+    }
+}
+
+@keyframes stats-header-anim15 {
+    0% {
+        rotate: 0;
+        left: 0;
+        top: -100px;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 2vw;
+    }
+    100% {
+        rotate: -25deg;
+        left: 20vw;
+        top: -50px;
+        width: 25vw;
+        height: 25vw;
+        border-radius: 5vw;
+    }
+}
+
+@keyframes stats-header-anim16 {
+    0% {
+        rotate: 0;
+        left: 0;
+        top: -100px;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 2vw;
+    }
+    100% {
+        rotate: -30deg;
+        left: 25vw;
+        top: -70px;
+        width: 30vw;
+        height: 30vw;
+        border-radius: 6vw;
+    }
+}
+
+@keyframes stats-header-anim17 {
+    0% {
+        rotate: 0;
+        left: 0;
+        top: -100px;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 2vw;
+    }
+    100% {
+        rotate: -35deg;
+        left: 35vw;
+        top: -100px;
+        width: 35vw;
+        height: 35vw;
+        border-radius: 7vw;
+    }
+}
+
+@keyframes stats-header-anim18 {
+    0% {
+        rotate: 0;
+        left: 0;
+        top: -100px;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 2vw;
+    }
+    100% {
+        rotate: -40deg;
+        left: 45vw;
+        top: -150px;
+        width: 40vw;
+        height: 40vw;
+        border-radius: 8vw;
+    }
+}
+
+@keyframes stats-header-anim19 {
+    0% {
+        rotate: 0;
+        left: 0;
+        top: -100px;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 2vw;
+    }
+    100% {
+        rotate: -45deg;
+        left: 55vw;
+        top: -200px;
+        width: 45vw;
+        height: 45vw;
+        border-radius: 9vw;
+    }
+}
+
+@keyframes stats-header-anim20 {
+    0% {
+        rotate: 0;
+        left: 0;
+        top: -100px;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 2vw;
+    }
+    100% {
+        rotate: -50deg;
+        left: 70vw;
+        top: -250px;
+        width: 50vw;
+        height: 50vw;
+        border-radius: 10vw;
+    }
+}
+
