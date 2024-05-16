@@ -94,39 +94,37 @@ export const TicTacToe = observer( () => {
 
     return (
         <div className="tic-tac-toe">
-            <section className="tic-tac-toe-header">
-                <div className={"ttt-background"}>
-                    <div className={"ttt-elem"}></div>
-                    <div className={"ttt-elem"}></div>
-                    <div className={"ttt-elem"}></div>
-                    <div className={"ttt-elem"}></div>
-                    <div className={"ttt-elem"}></div>
-                    <div className={"ttt-elem"}></div>
-                    <div className={"ttt-elem"}></div>
-                    <div className={"ttt-elem"}></div>
-                    <div className={"ttt-elem"}></div>
-                    <div className={"ttt-elem"}></div>
-                    <div className={"ttt-elem"}></div>
-                </div>
-                <div className={"ttt-header"}>
-                    <h2>Tic Tac Toe</h2>
-                    <span>Крестики-нолики</span>
-                </div>
-            </section>
+            <div className={"global-2048-background"} style={{height: "1750px"}}>
 
-            <section className={"mine-rules"} style={{margin:"auto", minWidth:"700px"}}>
+            </div>
+            <div className="game-2048-header">
+                <div className={"game2048-header-block"}></div>
+                <div className={"game2048-header-block"}></div>
+                <div className={"game2048-header-block"}></div>
+                <div className={"game2048-header-block"}></div>
+                <div className={"game2048-header-block"}></div>
+                <div className={"game2048-header-block"}></div>
+                <div className={"game2048-header-block"}></div>
+                <div className={"game2048-header-block"}></div>
+                <div className={"game2048-header-block"}></div>
+                <div className={"game2048-header-block"}></div>
+                <div className={"game2048-header-block"}></div>
+                <h1>Крестики-нолики</h1>
+            </div>
+
+            <section className={"mine-rules"} style={{margin: "auto", minWidth: "700px"}}>
                 <h3>История</h3>
                 <p>
                     Многие думают, что Крестики-Нолики - это простая игра. Но если углубиться в ее историю,
                     можно узнать много интересного. Исследование происхождения этой игры показывает её особое
                     место в мире игр.
                 </p>
-                <div className={"ttt-links"} style={{display:"flex", gap:"20px"}}>
+                <div className={"ttt-links"} style={{display: "flex", gap: "20px"}}>
                     <BlockLink
-                    link={"https://tictactoefree.com/ru/statji/istoriya-i-proishozhdenie-igry-krestiki-noliki#:~:text=%D0%94%D1%80%D0%B5%D0%B2%D0%BD%D0%B8%D0%B9%20%D0%95%D0%B3%D0%B8%D0%BF%D0%B5%D1%82,%D0%9D%D0%BE%D0%BB%D0%B8%D0%BA%D0%B8%2C%20%D0%BF%D1%80%D0%B8%D0%B4%D1%83%D0%BC%D0%B0%D0%B2%20%D0%B5%D1%91%20%D0%BF%D0%B5%D1%80%D0%B2%D1%83%D1%8E%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8E."}
-                    text={"Узнайте историю игры крестики-нолики"}
-                    header={"История"}
-                    elem={<FontAwesomeIcon icon={faHistory}/>}
+                        link={"https://tictactoefree.com/ru/statji/istoriya-i-proishozhdenie-igry-krestiki-noliki#:~:text=%D0%94%D1%80%D0%B5%D0%B2%D0%BD%D0%B8%D0%B9%20%D0%95%D0%B3%D0%B8%D0%BF%D0%B5%D1%82,%D0%9D%D0%BE%D0%BB%D0%B8%D0%BA%D0%B8%2C%20%D0%BF%D1%80%D0%B8%D0%B4%D1%83%D0%BC%D0%B0%D0%B2%20%D0%B5%D1%91%20%D0%BF%D0%B5%D1%80%D0%B2%D1%83%D1%8E%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8E."}
+                        text={"Узнайте историю игры крестики-нолики"}
+                        header={"История"}
+                        elem={<FontAwesomeIcon icon={faHistory}/>}
                     />
                     <BlockLink
                         link={"https://yandex.ru/games/app/98511"}
@@ -138,7 +136,7 @@ export const TicTacToe = observer( () => {
 
             </section>
 
-            <section className={"mine-info-panel"} style={{width:"700px"}}>
+            <section className={"mine-info-panel"} style={{width: "700px"}}>
                 <div>
                     <h3 style={{fontSize: "24px", fontWeight: "400"}}>Сейчас ходят: {move}</h3>
                 </div>

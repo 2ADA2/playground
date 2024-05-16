@@ -16,7 +16,7 @@ export const calcField = (field, index, check = true) => {
                 let newRow = [];
                 while (row.length){
                     //суммируем и/или добавляем в новый массив newRow
-                    if (row[0] != row[1] || !row[0] || !row[1]) {
+                    if (row[0] !== row[1] || !row[0] || !row[1]) {
                         if(row[0]){
                             newRow.push(row[0]); 
                         }
@@ -45,7 +45,7 @@ export const calcField = (field, index, check = true) => {
                 while (row.length) {
                     const index = row.length - 1
                     //суммируем и/или добавляем в новый массив newRow
-                    if (row[index] != row[index-1] || !row[index] || !row[index-1]) {
+                    if (row[index] !== row[index-1] || !row[index] || !row[index-1]) {
                         if (row[index]) {
                             newRow.unshift(row[index]);
                         }
@@ -73,7 +73,7 @@ export const calcField = (field, index, check = true) => {
                 while (row.length) {
                     const index = row.length-1
                     //суммируем и/или добавляем в новый массив newRow
-                    if (row[index] != row[index - 1] || !row[index] || !row[index-1]) {
+                    if (row[index] !== row[index - 1] || !row[index] || !row[index-1]) {
                         if (row[0]) {
                             newRow.unshift(row[index]);
                         }
@@ -101,7 +101,7 @@ export const calcField = (field, index, check = true) => {
                 let newRow = [];
                 while (row.length) {
                     //суммируем и/или добавляем в новый массив newRow
-                    if (row[0] != row[1] || !row[0] || !row[1]) {
+                    if (row[0] !== row[1] || !row[0] || !row[1]) {
                         if (row[0]) {
                             newRow.push(row[0]);
                         }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Line } from "react-chartjs-2";
+import {Line} from "react-chartjs-2";
 import {CategoryScale, Chart, LinearScale, LineElement, PointElement} from "chart.js";
 
 Chart.register(CategoryScale);
@@ -8,21 +8,19 @@ Chart.register(PointElement);
 Chart.register(LineElement);
 
 
-
-
 export const LineChart = ({data, data2 = 0}) => {
     let lineChartData
 
-    if (data.length === 0) data = [0,0]
-    if(data2 && data2.length === 0) data2 = [0,0]
+    if (data.length === 0) data = [0, 0]
+    if (data2 && data2.length === 0) data2 = [0, 0]
 
     if (data.length === 1) data = [0, ...data]
-    if(data2 && data2.length === 1) data2 = [0, ...data2]
+    if (data2 && data2.length === 1) data2 = [0, ...data2]
 
-    if(data2){
+    if (data2) {
         lineChartData = {
             labels: data2.map(a => {
-                if(a === 260) {
+                if (a === 260) {
                     return "win"
                 }
                 return a
@@ -41,7 +39,7 @@ export const LineChart = ({data, data2 = 0}) => {
                 }
             ]
         };
-    } else{
+    } else {
         lineChartData = {
             labels: data.map(a => a),
             datasets: [
@@ -60,15 +58,19 @@ export const LineChart = ({data, data2 = 0}) => {
             width={160}
             height={60}
             options={{
-                animation:false,
+                animation: false,
                 title: {
                     display: false,
                     text: "Рекорд",
                     fontSize: 20
                 },
                 legend: {
-                    display: true,
-                    position: "top"
+                    display: false,
+                },
+                scales: {
+                    y: {
+                        min: 0
+                    }
                 }
 
             }}

@@ -62,25 +62,27 @@ export const Game2048 = observer(() => {
 
     return (
 
-    <>
+    <div className={"ttfe-game"}>
         <section>
-            <div className={"global-2048-background"} style={{height:"2000px"}}>
-
-            </div>
-            <div className="game-2048-header">
-                <div className={"game2048-header-block"}></div>
-                <div className={"game2048-header-block"}></div>
-                <div className={"game2048-header-block"}></div>
-                <div className={"game2048-header-block"}></div>
-                <div className={"game2048-header-block"}></div>
-                <div className={"game2048-header-block"}></div>
-                <div className={"game2048-header-block"}></div>
-                <div className={"game2048-header-block"}></div>
-                <div className={"game2048-header-block"}></div>
-                <div className={"game2048-header-block"}></div>
-                <div className={"game2048-header-block"}></div>
-                <h1>2048 Game</h1>
-            </div>
+            <section className="tic-tac-toe-header">
+                <div className={"ttt-background"}>
+                    <div className={"ttt-elem"}></div>
+                    <div className={"ttt-elem"}></div>
+                    <div className={"ttt-elem"}></div>
+                    <div className={"ttt-elem"}></div>
+                    <div className={"ttt-elem"}></div>
+                    <div className={"ttt-elem"}></div>
+                    <div className={"ttt-elem"}></div>
+                    <div className={"ttt-elem"}></div>
+                    <div className={"ttt-elem"}></div>
+                    <div className={"ttt-elem"}></div>
+                    <div className={"ttt-elem"}></div>
+                </div>
+                <div className={"ttt-header"}>
+                    <h2>2048</h2>
+                    <span>Классическая игра в 2048</span>
+                </div>
+            </section>
         </section>
         <section className="filler">
             <h2>Полезные ссылки</h2>
@@ -124,7 +126,7 @@ export const Game2048 = observer(() => {
             <h2>Как играть</h2>
             <p>Используйте стрелки на вашей клавиатуре чтобы делать ходы. Попробуйте собрать плитку с числом 2048! (можете и больше)</p>
         </section>
-    </>
+    </div>
 
     );
 })
