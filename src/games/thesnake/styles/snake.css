@@ -136,3 +136,19 @@
         opacity: 1;
     }
 }
+
+@media (max-width: 1500px) {
+    .snake-field{
+        width: 400px;
+        height: 400px;
+    }
+    .snake-modal{
+        width: 400px;
+        height: 400px;
+        top:-400px;
+        left:calc(50vw - 200px);
+    }
+    .snake-info-container{
+        width: 400px;
+    }
+}

@@ -1,8 +1,8 @@
-.game{
+.game {
     margin: 100px auto;
 }
 
-.game-2048-header{
+.game-2048-header {
     position: relative;
     width: 100%;
     height: 300px;
@@ -13,7 +13,7 @@
 
 }
 
-.global-2048-background{
+.global-2048-background {
     z-index: -100;
     position: absolute;
     width: 100vw;
@@ -21,104 +21,107 @@
     background: radial-gradient(circle at top, #000, #000000, rgba(255, 32, 212, 0.3), rgba(99, 0, 185, 0.3));
 }
 
-.game-2048-header h1{
+.game-2048-header h1 {
     position: absolute;
     left: 0;
     color: rgba(255, 255, 255, 0.9);
     width: 100vw;
     text-align: center;
     font-size: clamp(60px, 5vw, 200px);
-    font-weight:400 ;
+    font-weight: 400;
 }
 
-.game2048-header-block{
+.game2048-header-block {
     z-index: -1;
     border-radius: 50%;
     width: 25vw;
     height: 25vw;
-    top:0;
-    left:-10vw;
+    top: 0;
+    left: -10vw;
     rotate: -45deg;
     position: absolute;
     background: linear-gradient(to bottom, #000000, #000000, rgb(255, 32, 212), rgb(99, 0, 185));
     animation: game2048-animation1 1s both;
 }
-.game-2048-header .game2048-header-block:nth-child(2){
+
+.game-2048-header .game2048-header-block:nth-child(2) {
     z-index: -2;
     animation: game2048-animation2 1s both;
 }
-.game-2048-header .game2048-header-block:nth-child(3){
+
+.game-2048-header .game2048-header-block:nth-child(3) {
     z-index: -3;
     animation: game2048-animation4 1s both;
 }
 
-.game-2048-header .game2048-header-block:nth-child(4){
+.game-2048-header .game2048-header-block:nth-child(4) {
     z-index: -4;
     animation: game2048-animation5 1s both;
 }
 
-.game-2048-header .game2048-header-block:nth-child(5){
+.game-2048-header .game2048-header-block:nth-child(5) {
     z-index: -5;
     animation: game2048-animation6 1s both;
 }
 
-.game-2048-header .game2048-header-block:nth-child(6){
+.game-2048-header .game2048-header-block:nth-child(6) {
     z-index: -6;
     animation: game2048-animation7 1s both;
 }
 
-.game-2048-header .game2048-header-block:nth-child(7){
+.game-2048-header .game2048-header-block:nth-child(7) {
     z-index: -7;
     animation: game2048-animation8 1s both;
 }
 
-.game-2048-header .game2048-header-block:nth-child(8){
+.game-2048-header .game2048-header-block:nth-child(8) {
     z-index: -8;
     animation: game2048-animation9 1s both;
 }
 
-.game-2048-header .game2048-header-block:nth-child(9){
+.game-2048-header .game2048-header-block:nth-child(9) {
     z-index: -9;
     animation: game2048-animation10 1s both;
 }
-.game-2048-header .game2048-header-block:nth-child(10){
+
+.game-2048-header .game2048-header-block:nth-child(10) {
     z-index: -10;
     animation: game2048-animation11 1s both;
 }
 
 
-
 @keyframes game2048-animation1 {
-    0%{
-        top:0px;
+    0% {
+        top: 0px;
         opacity: 1;
-        left:-10vw;
+        left: -10vw;
         rotate: -45deg;
         width: 25vw;
         height: 25vw;
     }
-    100%{
-        top:0px;
+    100% {
+        top: 0px;
         opacity: 1;
-        left:-10vw;
+        left: -10vw;
         rotate: -45deg;
         width: 25vw;
         height: 25vw;
     }
 }
+
 @keyframes game2048-animation2 {
-    0%{
-        top:0px;
+    0% {
+        top: 0px;
         opacity: 1;
-        left:-10vw;
+        left: -10vw;
         rotate: -45deg;
         width: 25vw;
         height: 25vw;
     }
-    100%{
-        top:50px;
+    100% {
+        top: 50px;
         opacity: 1;
-        left:0;
+        left: 0;
         rotate: -60deg;
         width: 25vw;
         height: 25vw;
@@ -126,18 +129,18 @@
 }
 
 @keyframes game2048-animation4 {
-    0%{
-        top:0px;
+    0% {
+        top: 0px;
         opacity: 1;
-        left:-10vw;
+        left: -10vw;
         rotate: -45deg;
         width: 25vw;
         height: 25vw;
     }
-    100%{
-        top:75px;
+    100% {
+        top: 75px;
         opacity: 1;
-        left:10vw;
+        left: 10vw;
         rotate: -70deg;
         width: 25vw;
         height: 25vw;
@@ -145,18 +148,18 @@
 }
 
 @keyframes game2048-animation5 {
-    0%{
-        top:0px;
+    0% {
+        top: 0px;
         opacity: 1;
-        left:-10vw;
+        left: -10vw;
         rotate: -45deg;
         width: 25vw;
         height: 25vw;
     }
-    100%{
-        top:83px;
+    100% {
+        top: 83px;
         opacity: 1;
-        left:20vw;
+        left: 20vw;
         rotate: -80deg;
         width: 25vw;
         height: 25vw;
@@ -164,90 +167,91 @@
 }
 
 @keyframes game2048-animation6 {
-    0%{
-        top:0;
+    0% {
+        top: 0;
         opacity: 0;
-        left:0;
+        left: 0;
         rotate: -45deg;
     }
-    100%{
-        top:100px;
+    100% {
+        top: 100px;
         opacity: 1;
-        left:30vw;
+        left: 30vw;
         rotate: -90deg;
     }
 }
 
 @keyframes game2048-animation7 {
-    0%{
-        top:0;
+    0% {
+        top: 0;
         opacity: 0;
-        left:0;
+        left: 0;
         rotate: -45deg;
     }
-    100%{
-        top:83px;
+    100% {
+        top: 83px;
         opacity: 1;
-        left:41vw;
+        left: 41vw;
         rotate: -100deg;
     }
 }
 
 @keyframes game2048-animation8 {
-    0%{
-        top:0;
+    0% {
+        top: 0;
         opacity: 0;
-        left:0;
+        left: 0;
         rotate: -45deg;
     }
-    100%{
-        top:75px;
+    100% {
+        top: 75px;
         opacity: 1;
-        left:52vw;
+        left: 52vw;
         rotate: -110deg;
     }
 }
 
 @keyframes game2048-animation9 {
-    0%{
-        top:0;
+    0% {
+        top: 0;
         opacity: 0;
-        left:0;
+        left: 0;
         rotate: -45deg;
     }
-    100%{
-        top:50px;
+    100% {
+        top: 50px;
         opacity: 1;
-        left:65vw;
+        left: 65vw;
         rotate: -120deg;
     }
 }
 
 @keyframes game2048-animation10 {
-    0%{
-        top:0;
+    0% {
+        top: 0;
         opacity: 0;
-        left:0;
+        left: 0;
         rotate: -130deg;
     }
-    100%{
-        top:-10px;
+    100% {
+        top: -10px;
         opacity: 1;
-        left:75vw;
+        left: 75vw;
         rotate: -110deg;
     }
 }
+
 @keyframes game2048-animation11 {
-    0%{
-        top:0;
+    0% {
+        top: 0;
         opacity: 0;
-        left:0;
+        left: 0;
         rotate: -130deg;
     }
-    100%{
-        top:-150px;
+    100% {
+        top: -150px;
         opacity: 1;
-        left:85vw;
+        left: 85vw;
         rotate: -120deg;
     }
 }
@@ -260,181 +264,229 @@
     font-size: 26px;
     margin-bottom: 10px;
 }
-.game .field{
-    width:600px;
-    height:600px;
+
+.game .field {
+    width: 600px;
+    height: 600px;
     background-color: rgba(0, 0, 0, 0.25);
     border: 10px solid rgba(0, 0, 0, 0);
     border-radius: 10px;
-    margin:auto;
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     user-select: none;
-    margin-top:40px;
+    margin-top: 40px;
     outline: 1px solid #636363;
 }
 
-.field-row{
-    width:100%;
-    height:calc(20% + 20px);
+.field-row {
+    width: 100%;
+    height: calc(20% + 20px);
     display: flex;
     justify-content: space-between;
 }
 
-.block{
+.block {
     box-sizing: border-box;
-    width:calc(20% + 20px);
-    height:100%;
+    width: calc(20% + 20px);
+    height: 100%;
     background-color: rgba(255, 255, 255, 0.2);
-    border-radius:5px;
+    border-radius: 5px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.number{
-    width:100%;
-    height:100%;
-    border-radius: 5px;        
+.number {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
     background-color: rgba(0, 0, 0, 0.2);
-    color:rgb(255, 0, 0); 
+    color: rgb(255, 0, 0);
     font-weight: 300;
     font-size: 50px;
-    text-shadow: 1px 1px 20px  #ff0000b7;
-    border:2px solid rgb(255, 0, 0);
-    border-radius:5px;
-    box-shadow: 1px 1px 10px  #ff0000b7;
+    text-shadow: 1px 1px 20px #ff0000b7;
+    border: 2px solid rgb(255, 0, 0);
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #ff0000b7;
 }
 
-.number2{
-    color:#ffffff;
+.number2 {
+    color: #ffffff;
     font-size: 70px;
-    text-shadow: 1px 1px 20px  #ffffffd5;
+    text-shadow: 1px 1px 20px #ffffffd5;
     border-color: #ffffff;
-    box-shadow: 1px 1px 10px  #ffffffad;
+    box-shadow: 1px 1px 10px #ffffffad;
 }
+
 .number4 {
     color: #c2ffbc;
     font-size: 70px;
-    text-shadow: 1px 1px 20px  #c2ffbcad;
+    text-shadow: 1px 1px 20px #c2ffbcad;
     border-color: #c2ffbc;
-    box-shadow: 1px 1px 10px  #c2ffbcad;
+    box-shadow: 1px 1px 10px #c2ffbcad;
 }
+
 .number8 {
     color: #37c52a;
     font-size: 70px;
-    text-shadow: 1px 1px 20px  #2dce1ead;
+    text-shadow: 1px 1px 20px #2dce1ead;
     border-color: #2dce1ead;
-    box-shadow: 1px 1px 10px  #2dce1ead;
+    box-shadow: 1px 1px 10px #2dce1ead;
 }
+
 .number16 {
-    color:#8ac52a;
+    color: #8ac52a;
     font-size: 70px;
     text-shadow: 1px 1px 20px #8ac52ad5;
     border-color: #8ac52ad5;
-    box-shadow: 1px 1px 10px  #8ac52ad5;
+    box-shadow: 1px 1px 10px #8ac52ad5;
 }
+
 .number32 {
-    color:#d2dd31;
+    color: #d2dd31;
     font-size: 70px;
     text-shadow: 1px 1px 20px #b6ff41d5;
     border-color: #b6ff41d5;
-    box-shadow: 1px 1px 10px  #b6ff41d5;
+    box-shadow: 1px 1px 10px #b6ff41d5;
 }
+
 .number64 {
-    color:#ffcd42;
+    color: #ffcd42;
     font-size: 70px;
     text-shadow: 1px 1px 20px #ffcb3dd3;
     border-color: #ffcb3dd3;
-    box-shadow: 1px 1px 10px  #ffcb3dd3;
+    box-shadow: 1px 1px 10px #ffcb3dd3;
 }
+
 .number128 {
-    color:#ff8827;
+    color: #ff8827;
     font-size: 55px;
     text-shadow: 1px 1px 20px #ff7300d2;
     border-color: #ff7300d2;
-    box-shadow: 1px 1px 10px  #ff7300d2;
+    box-shadow: 1px 1px 10px #ff7300d2;
 }
+
 .number256 {
-    color:#ff6b3e;
+    color: #ff6b3e;
     font-size: 55px;
     text-shadow: 1px 1px 30px #ff6b3e;
     border-color: #ff6b3e;
-    box-shadow: 1px 1px 10px  #ff6b3e;
+    box-shadow: 1px 1px 10px #ff6b3e;
 }
+
 .number512 {
-    color:#ff443e;
+    color: #ff443e;
     font-size: 55px;
     text-shadow: 1px 1px 20px #ff443e;
     border-color: #ff443e;
-    box-shadow: 1px 1px 10px  #ff443e;
+    box-shadow: 1px 1px 10px #ff443e;
 }
 
-.new-number{
+.new-number {
     animation-name: show;
     animation-duration: 300ms;
-    animation-timing-function:ease;
-}
-.sum{
-    animation-name: sum;
-    animation-duration: 500ms;
-    animation-timing-function:ease;
+    animation-timing-function: ease;
 }
 
-@keyframes show{
-    0%{
-        width:0;
+.sum {
+    animation-name: sum;
+    animation-duration: 500ms;
+    animation-timing-function: ease;
+}
+
+@keyframes show {
+    0% {
+        width: 0;
         height: 0;
         font-size: 0;
     }
-    100%{
+    100% {
         width: 100%;
         height: 100%;
         font-size: 70px;
     }
 }
 
-@keyframes sum{
-    0%{
-        box-shadow:1px 1px 0;
+@keyframes sum {
+    0% {
+        box-shadow: 1px 1px 0;
     }
-    50%{
-        box-shadow:1px 1px 50px;
+    50% {
+        box-shadow: 1px 1px 50px;
     }
-    90%{
-        box-shadow:1px 1px 10px;
+    90% {
+        box-shadow: 1px 1px 10px;
     }
-    100%{
-        box-shadow:1px 1px 10px;
+    100% {
+        box-shadow: 1px 1px 10px;
     }
 }
 
-.rules-container{
+.rules-container {
     width: 700px;
     margin: 100px auto;
     font-size: 26px;
-    color:#a3a3a3;
+    color: #a3a3a3;
     line-height: 40px;
 }
-.rules-container h2{
+
+.rules-container h2 {
     font-size: 30px;
 }
-.rules-container h2::after{
+
+.rules-container h2::after {
     content: "";
     width: 300px;
     height: 2px;
-    margin:5px 0;
+    margin: 5px 0;
     margin-bottom: 15px;
     border-radius: 1px;
     display: block;
-    background:rgb(218, 218, 218);
+    background: rgb(218, 218, 218);
 }
 
-@media (width>1200px) {
+@media (max-width: 1500px) {
+    .game .field {
+        width: 500px;
+        height: 500px;
+    }
+
+    .ttfe-game table {
+        gap: 5px;
+    }
+
+    .ttfe-game table td {
+        display: flex;
+        gap: 5px;
+    }
+
+    .ttfe-game .score {
+        height: 40px;
+        width: 180px;
+        font-size: 20px;
+        padding: 0;
+    }
+    .ttfe-game .score:first-child {
+        margin-top: 40px;
+    }
+    .ttfe-game .restart button{
+        width: 150px;
+        height: 40px;
+    }
+
+    .ttfe-game .control-panel{
+        width: 500px;
+    }
+
+    .ttfe-game .loose {
+        width: 500px;
+        height: 500px;
+    }
 }
 

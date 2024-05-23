@@ -30,7 +30,7 @@
     transition-duration: 300ms;
 }
 .home-header .p-opacity{
-    font-size: 24px;
+    font-size: clamp(16px, 1.4vw, 30px);
     color: rgba(255, 255, 255, 0.68);
 }
 
@@ -113,17 +113,17 @@
 }
 
 .home-main h2 {
-    font-size: 40px;
+    font-size: clamp(30px, 3vw, 60px);
 }
 
 .home-main div h2, .home-about h2 {
     font-family: sans-serif;
-    font-size: 100px;
+    font-size: clamp(40px, 4vw, 100px);
     position: relative;
 }
 
 .home-about {
-    font-size: 30px;
+    font-size: clamp(20px, 1.3vw, 40px);
     position: absolute;
     left: calc(-50vw - 1000px);
     transition-duration: 500ms;
@@ -382,7 +382,7 @@ div .hidden-detailed {
     border-top: 1px solid rgba(255, 255, 255, 0.35);
     overflow: hidden;
     max-width: 3000px;
-    height: 600px;
+    height: 1000px;
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -409,7 +409,7 @@ div .hidden-detailed {
     max-width: 3000px;
     width: 100%;
     min-width: 1300px;
-    height: 800px;
+    height: 1000px;
     overflow: hidden;
     display: flex;
     align-items: center;
