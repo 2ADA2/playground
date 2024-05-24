@@ -49,13 +49,13 @@ export const Playground = () => {
                     2048
                 </button>
                 <button onClick={() => setGame(2)} className={(game === 2) ? "active" : ""}>
-                    Tic Tac Toe
+                    крестики-нолики
                 </button>
                 <button onClick={() => setGame(3)} className={(game === 3) ? "active" : ""}>
-                    The snake
+                    змейка
                 </button>
                 <button onClick={() => setGame(4)} className={(game === 4) ? "active" : ""}>
-                    Minesweeper
+                    сапёр
                 </button>
             </section>
 
@@ -76,6 +76,8 @@ export const Playground = () => {
                         2048 - "залипательная" игра-головоломка, в которой игрок соединяет плитки с одинаковыми числами,
                         стремясь создать плитку с числом 2048. Простые правила, но глубокая стратегия делают эту игру
                         захватывающей и увлекательной для всех, кто любит вызов умственных способностей.
+                        На самом деле совсем не просто собрать даже плитку 1024, но есть множество стратегий облегчающих
+                        прохождение этой игры. Хотя игра и называется 2048, но фактического предела в ней нет.
                     </p>
                     <Link to={TTFE_ROUTE} onClick={() => window.scrollTo(0,0)}><button>Играть</button></Link>
                 </div>
@@ -108,8 +110,8 @@ export const Playground = () => {
                             <FontAwesomeIcon icon={faRodSnake}/>
                         </div>
                         <div className="game-preview-header-container">
-                            <h3>Змейка</h3>
-                            <span>Знаменитая игра благодоря своей простоте</span>
+                            <h3>Snake</h3>
+                            <span>Змейка - игра, которую знает каждый</span>
                         </div>
                     </div>
 

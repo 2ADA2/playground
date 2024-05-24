@@ -88,7 +88,7 @@ export const Stats = observer(() => {
                             </div>
                             <div>
                                 <span>Самый низкий результат: </span>
-                                <span>{Global.ttfeRecords.slice().sort((a, b) => a - b)[0] || " нет данных"}</span>
+                                <span>{Global.ttfeRecords.slice().sort((a, b) => a - b)[0] || 0}</span>
                             </div>
                             <div>
                                 <span>Средний результат (среднее арифметическое): </span>
@@ -98,6 +98,10 @@ export const Stats = observer(() => {
                                 <span>Достигнута плитка: </span><span></span>
                             </div>
                             <div className={`number number${store.maxBlock}`}>{store.maxBlock}</div>
+                            <div className={"color-container"}>
+                                <div className={"stats-chart-color"}></div>
+                                <span> - очки</span>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -118,12 +122,12 @@ export const Stats = observer(() => {
                                 <span>{convertTime(mineStore.time)}</span>
                             </div>
                             <div>
-                                <span>Лучший результат по времени: </span>
-                                <span>{Global.mineSweeperRecords.slice().sort((a, b) => a - b).at(-1)+ "c" || " нет данных"}</span>
+                                <span>Самый низкий результат по времени: </span>
+                                <span>{Global.mineSweeperRecords.slice().sort((a, b) => a - b).at(-1) + "c" || " нет данных"}</span>
                             </div>
                             <div>
-                                <span>Самый низкий результат по времени): </span>
-                                <span>{Global.mineSweeperRecords.slice().sort((a, b) => a - b)[0]+ "c" || " нет данных"}</span>
+                                <span>Лучший результат по времени: </span>
+                                <span>{Global.mineSweeperRecords.slice().sort((a, b) => a - b)[0] + "c" || " нет данных"}</span>
                             </div>
                             <div>
                                 <span>Средний результат по времени(среднее арифметическое): </span>
@@ -140,6 +144,14 @@ export const Stats = observer(() => {
                             <div>
                                 <span>Средний результат по разминированию(среднее арифметическое): </span>
                                 <span>{getAverage(Global.mineSweeperRecordsMines.slice()) || " нет данных"}</span>
+                            </div>
+                            <div className={"color-container"}>
+                                <div className={"stats-chart-color mine-color"}></div>
+                                <span> - разминировано мин</span>
+                            </div>
+                            <div className={"color-container"}>
+                                <div className={"stats-chart-color mine-color2"}></div>
+                                <span> - время</span>
                             </div>
                         </div>
                     </div>
@@ -165,11 +177,15 @@ export const Stats = observer(() => {
                             </div>
                             <div>
                                 <span>Самый низкий результат: </span>
-                                <span>{Global.snakeRecords.slice().sort((a, b) => a - b)[0] || " нет данных"}</span>
+                                <span>{Global.snakeRecords.slice().sort((a, b) => a - b)[0] || 0}</span>
                             </div>
                             <div>
                                 <span>Средний результат: </span>
                                 <span>{getAverage(Global.snakeRecords.slice()) || " нет данных"}</span>
+                            </div>
+                            <div className={"color-container"}>
+                                <div className={"stats-chart-color"}></div>
+                                <span> - съедено яблок</span>
                             </div>
                         </div>
                     </div>

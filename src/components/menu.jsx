@@ -26,9 +26,9 @@ export const  Menu = ({nav, setNav = (val) => {}, scrollHeight}) => {
                 <section className="search-links">
                     <Link to={PLAYGROUND_ROUTE}>Playground</Link>
                     <Link to={TTFE_ROUTE}>2048</Link>
-                    <Link to={THESNAKE_ROUTE}>The snake</Link>
-                    <Link to={MINESWEEPER_ROUTE}>Minesweeper</Link>
-                    <Link to={TICTACTOE_ROUTE}>Tic Tac Toe</Link>
+                    <Link to={THESNAKE_ROUTE}>Змейка</Link>
+                    <Link to={MINESWEEPER_ROUTE}>Сапёр</Link>
+                    <Link to={TICTACTOE_ROUTE}>крестики-нолики</Link>
                 </section>
             </div>
         </div>

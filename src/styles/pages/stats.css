@@ -150,7 +150,7 @@ section .stats-mine-rules h3 {
     min-height: 0;
     position: absolute;
     border-radius: 2vw;
-    background: linear-gradient(to left bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgb(26, 0, 35), rgba(65, 0, 87, 0.63), #ff72ac);
+    background: linear-gradient(to left bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgb(26, 0, 35), rgba(255, 0, 163, 0.63), #ff72ac);
     animation: stats-header-anim 0.3s both;
     padding: 0;
     aspect-ratio: 1 / 1;
@@ -380,7 +380,7 @@ section .stats-mine-rules h3 {
 .stats-header-block:nth-child(18),
 .stats-header-block:nth-child(19),
 .stats-header-block:nth-child(20) {
-    background: linear-gradient(to right bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgb(35, 0, 34), rgb(65, 0, 87), #ff72ac);
+    background: linear-gradient(to right bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgb(48, 0, 67), rgba(255, 0, 163, 0.63), #ff72ac);
     z-index: 200;
     animation: stats-header-anim11 0.3s 0.05s both;
 }
@@ -613,5 +613,25 @@ section .stats-mine-rules h3 {
         height: 50vw;
         border-radius: 10vw;
     }
+}
+
+
+.stats-chart-color{
+    width:50px;
+    height: 20px;
+    background: #68ff6b;
+}
+section .chart-info .color-container span{
+    width: 60%;
+    justify-content: flex-start;
+    font-weight: 100;
+}
+
+.mine-color{
+    background: #ff33dd;
+}
+
+.mine-color2{
+    background: rgba(51,229,255,0.76);
 }
 
