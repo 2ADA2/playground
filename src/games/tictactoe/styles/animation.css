@@ -4,7 +4,7 @@
     z-index: -1;
     position: absolute;
     top: 0;
-    background: radial-gradient(circle at top center, black, black,black, #273aa6);
+    background: radial-gradient(circle at top center, black, black, #2a0d65, #9527a6);
 }
 
 .ttt-header {

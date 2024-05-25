@@ -392,6 +392,7 @@ div .hidden-detailed {
     font-size: 30px;
     gap:40px;
     background: radial-gradient(ellipse at 80% 20%, rgba(129, 80, 189, 0.5), rgba(90, 58, 145, 0.2), rgba(255, 255, 255, 0));
+    border-bottom: 1px solid #3e3e3e;
 }
 .important h3{
     font-size: 48px;
@@ -448,7 +449,7 @@ div .hidden-detailed {
     font-size: 30px;
     flex-direction: column;
     height: 1700px;
-    background: radial-gradient(circle at center 2800px, rgba(76, 151, 178, 0.62), rgba(255, 255, 255, 0));
+    background: radial-gradient(circle at center  bottom, rgba(41, 116, 145, 0.62), rgba(5, 39, 50, 0.62), black, black);
 }
 .for-everyone h3{
     font-size: 48px;
